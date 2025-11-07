@@ -8,7 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Header Mejorado -->
+    <!-- Header con Menú Desplegable -->
     <header>
         <nav class="navbar">
             <div class="nav-container">
@@ -19,24 +19,33 @@
                     <span class="bar"></span>
                 </div>
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-map-marker-alt"></i> Lugares <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="termales-santa-rosa.html">Termales de Santa Rosa</a></li>
+                            <li><a href="valle-cocora.html">Valle del Cocora</a></li>
+                            <li><a href="bioparque-ukumari.html">Bioparque Ukumarí</a></li>
+                            <li><a href="plaza-bolivar.html">Plaza de Bolívar</a></li>
+                            <li><a href="cascada-santa-clara.html">Cascada Santa Clara</a></li>
+                            <li><a href="mirador-pereira.html">Mirador de Pereira</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#rutas"><i class="fas fa-route"></i> Rutas</a></li>
-                    <li><a href="#itinerarios"><i class="fas fa-calendar-alt"></i> Itinerarios</a></li>
-                    <li><a href="#lugares"><i class="fas fa-map-marker-alt"></i> Lugares</a></li>
                     <li><a href="#contacto"><i class="fas fa-phone"></i> Contacto</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section Mejorada -->
+    <!-- Hero Section -->
     <section id="inicio" class="hero">
         <div class="hero-content">
             <h1>Descubre el Corazón del Café Colombiano</h1>
             <p>Vive experiencias únicas en Risaralda - Donde la naturaleza y el café se encuentran</p>
             <div class="hero-buttons">
                 <a href="#rutas" class="cta-button primary"><i class="fas fa-route"></i> Ver Rutas</a>
-                <a href="#contacto" class="cta-button secondary"><i class="fas fa-phone"></i> Contactar</a>
+                <a href="#lugares" class="cta-button secondary"><i class="fas fa-map-marked-alt"></i> Explorar Lugares</a>
             </div>
         </div>
         <div class="hero-stats">
@@ -55,7 +64,7 @@
         </div>
     </section>
 
-    <!-- Sección Rutas Mejorada -->
+    <!-- Sección Rutas -->
     <section id="rutas" class="rutas">
         <div class="container">
             <h2 class="section-title">Nuestras Rutas Turísticas</h2>
@@ -224,44 +233,66 @@
         </div>
     </section>
 
-    <!-- Sección Itinerarios -->
-    <section id="itinerarios" class="itinerarios">
+    <!-- Sección Lugares Destacados -->
+    <section id="lugares" class="lugares">
         <div class="container">
-            <h2 class="section-title">Itinerarios Visuales</h2>
-            <p class="section-subtitle">Planifica tu aventura día a día</p>
+            <h2 class="section-title">Lugares Imperdibles</h2>
+            <p class="section-subtitle">Descubre los destinos más emblemáticos de Risaralda</p>
             
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-day">Día 1</div>
-                    <div class="timeline-content">
-                        <h4>Pereira Urbana y Natural</h4>
-                        <p>Descubre la ciudad y su conexión con la naturaleza</p>
-                        <ul>
-                            <li>Plaza de Bolívar</li>
-                            <li>Bioparque Ukumarí</li>
-                            <li>Centro Cultural</li>
-                            <li>Mirador</li>
-                        </ul>
+            <div class="lugares-grid">
+                <div class="lugar-card">
+                    <div class="lugar-icon" style="background: #27AE60;">
+                        <i class="fas fa-water"></i>
                     </div>
+                    <h3>Termales de Santa Rosa</h3>
+                    <p>Aguas medicinales volcánicas en medio de la naturaleza</p>
+                    <a href="termales-santa-rosa.html" class="lugar-link">Ver detalles</a>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-day">Día 2</div>
-                    <div class="timeline-content">
-                        <h4>Santa Rosa Termal</h4>
-                        <p>Relájate en aguas volcánicas y descubre cascadas</p>
-                        <ul>
-                            <li>Termales medicinales</li>
-                            <li>Cascada Santa Clara</li>
-                            <li>Finca cafetera</li>
-                        </ul>
+                <div class="lugar-card">
+                    <div class="lugar-icon" style="background: #3498DB;">
+                        <i class="fas fa-tree"></i>
                     </div>
+                    <h3>Valle del Cocora</h3>
+                    <p>Bosque de palmas de cera, el árbol nacional de Colombia</p>
+                    <a href="valle-cocora.html" class="lugar-link">Ver detalles</a>
                 </div>
-                <!-- Más días del itinerario -->
+                <div class="lugar-card">
+                    <div class="lugar-icon" style="background: #F1C40F;">
+                        <i class="fas fa-paw"></i>
+                    </div>
+                    <h3>Bioparque Ukumarí</h3>
+                    <p>Santuario de vida silvestre y conservación</p>
+                    <a href="bioparque-ukumari.html" class="lugar-link">Ver detalles</a>
+                </div>
+                <div class="lugar-card">
+                    <div class="lugar-icon" style="background: #E67E22;">
+                        <i class="fas fa-monument"></i>
+                    </div>
+                    <h3>Plaza de Bolívar</h3>
+                    <p>Corazón histórico de Pereira con el Bolívar Desnudo</p>
+                    <a href="plaza-bolivar.html" class="lugar-link">Ver detalles</a>
+                </div>
+                <div class="lugar-card">
+                    <div class="lugar-icon" style="background: #9B59B6;">
+                        <i class="fas fa-waterfall"></i>
+                    </div>
+                    <h3>Cascada Santa Clara</h3>
+                    <p>Caída de agua espectacular en Santa Rosa de Cabal</p>
+                    <a href="cascada-santa-clara.html" class="lugar-link">Ver detalles</a>
+                </div>
+                <div class="lugar-card">
+                    <div class="lugar-icon" style="background: #1ABC9C;">
+                        <i class="fas fa-binoculars"></i>
+                    </div>
+                    <h3>Mirador de Pereira</h3>
+                    <p>Vista panorámica de la ciudad al atardecer</p>
+                    <a href="mirador-pereira.html" class="lugar-link">Ver detalles</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección Contacto Mejorada -->
+    <!-- Sección Contacto -->
     <section id="contacto" class="contacto">
         <div class="container">
             <h2 class="section-title">¿Listo para tu Aventura?</h2>
@@ -318,7 +349,7 @@
         </div>
     </section>
 
-    <!-- Footer Mejorado -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -331,7 +362,7 @@
                     <ul>
                         <li><a href="#inicio">Inicio</a></li>
                         <li><a href="#rutas">Rutas</a></li>
-                        <li><a href="#itinerarios">Itinerarios</a></li>
+                        <li><a href="#lugares">Lugares</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
@@ -354,76 +385,16 @@
             element.classList.toggle('active');
         }
 
-        // Menú móvil
-        const navToggle = document.getElementById('navToggle');
-        const navMenu = document.getElementById('navMenu');
-        
-        navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-    </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magia Cafetera - Risaralda, Colombia</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-</head>
-<body>
-    <!-- Header con Menú Desplegable -->
-    <header>
-        <nav class="navbar">
-            <div class="nav-container">
-                <h1 class="logo"><i class="fas fa-mountain"></i> Magia Cafetera</h1>
-                <div class="nav-toggle" id="navToggle">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                    <li class="dropdown">
-                        <a href="#"><i class="fas fa-map-marker-alt"></i> Lugares <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="termales-santa-rosa.html">Termales de Santa Rosa</a></li>
-                            <li><a href="valle-cocora.html">Valle del Cocora</a></li>
-                            <li><a href="bioparque-ukumari.html">Bioparque Ukumarí</a></li>
-                            <li><a href="plaza-bolivar.html">Plaza de Bolívar</a></li>
-                            <li><a href="cascada-santa-clara.html">Cascada Santa Clara</a></li>
-                            <li><a href="mirador-pereira.html">Mirador de Pereira</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#rutas"><i class="fas fa-route"></i> Rutas</a></li>
-                    <li><a href="#contacto"><i class="fas fa-phone"></i> Contacto</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Resto del contenido de index.html se mantiene igual -->
-    <section id="inicio" class="hero">
-        <div class="hero-content">
-            <h1>Descubre el Corazón del Café Colombiano</h1>
-            <p>Vive experiencias únicas en Risaralda - Donde la naturaleza y el café se encuentran</p>
-            <div class="hero-buttons">
-                <a href="#rutas" class="cta-button primary"><i class="fas fa-route"></i> Ver Rutas</a>
-                <a href="#lugares" class="cta-button secondary"><i class="fas fa-map-marked-alt"></i> Explorar Lugares</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ... (el resto de tu contenido actual se mantiene igual) ... -->
-
-    <script>
-        // JavaScript para menú desplegable
+        // Menú móvil y dropdown
         document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
             const dropdowns = document.querySelectorAll('.dropdown');
             
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+
             dropdowns.forEach(dropdown => {
                 dropdown.addEventListener('click', function(e) {
                     if (window.innerWidth <= 768) {
@@ -431,20 +402,7 @@
                     }
                 });
             });
-
-            // Menú móvil
-            const navToggle = document.getElementById('navToggle');
-            const navMenu = document.getElementById('navMenu');
-            
-            navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-            });
         });
-
-        function toggleDetails(id) {
-            const element = document.getElementById(id);
-            element.classList.toggle('active');
-        }
     </script>
 </body>
 </html>
