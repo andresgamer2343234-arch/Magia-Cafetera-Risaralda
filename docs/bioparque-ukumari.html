@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plaza de Bolívar - Magia Cafetera</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo"><i class="fas fa-mountain"></i> Magia Cafetera</h1>
+                <div class="nav-toggle" id="navToggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-map-marker-alt"></i> Lugares <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="termales-santa-rosa.html">Termales de Santa Rosa</a></li>
+                            <li><a href="valle-cocora.html">Valle del Cocora</a></li>
+                            <li><a href="bioparque-ukumari.html">Bioparque Ukumarí</a></li>
+                            <li><a href="plaza-bolivar.html">Plaza de Bolívar</a></li>
+                            <li><a href="cascada-santa-clara.html">Cascada Santa Clara</a></li>
+                            <li><a href="mirador-pereira.html">Mirador de Pereira</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#rutas"><i class="fas fa-route"></i> Rutas</a></li>
+                    <li><a href="index.html#contacto"><i class="fas fa-phone"></i> Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="subpage-hero" style="background: linear-gradient(rgba(231, 76, 60, 0.7), rgba(243, 156, 18, 0.7)), url('https://images.unsplash.com/photo-1581093458791-8a6b6d47e744?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Plaza de Bolívar</h1>
+                <p>Corazón histórico de Pereira y el icónico Bolívar Desnudo</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="subpage-content">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card basic-info">
+                    <h2><i class="fas fa-info-circle" style="color: #27AE60;"></i> Información Práctica</h2>
+                    <div class="bullet-list">
+                        <div class="bullet-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Ubicación:</strong>
+                                <span>Centro histórico de Pereira</span>
+                            </div>
+                        </div>
+                        <div class="bullet-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Horario:</strong>
+                                <span>Acceso libre 24 horas</span>
+                            </div>
+                        </div>
+                        <div class="bullet-item">
+                            <i class="fas fa-monument"></i>
+                            <div>
+                                <strong>Atracción principal:</strong>
+                                <span>Bolívar Desnudo - Rodrigo Arenas Betancur</span>
+                            </div>
+                        </div>
+                        <div class="bullet-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <strong>Ideal para:</strong>
+                                <span>Historia, fotografía, cultura urbana</span>
+                            </div>
+                        </div>
+                        <div class="bullet-item">
+                            <i class="fas fa-hourglass-half"></i>
+                            <div>
+                                <strong>Duración recomendada:</strong>
+                                <span>1-2 horas para recorrido completo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card pricing-card">
+                    <h2><i class="fas fa-tags" style="color: #E67E22;"></i> Acceso y Experiencias</h2>
+                    <div class="pricing-tables">
+                        <div class="pricing-table">
+                            <h3>Visita Libre</h3>
+                            <div class="price-amount">Gratis</div>
+                            <p class="price-note">Acceso público</p>
+                            <div class="included-list">
+                                <ul>
+                                    <li>Acceso a la plaza y monumentos</li>
+                                    <li>Fotografías con el Bolívar Desnudo</li>
+                                    <li>Recorrido por la Catedral</li>
+                                    <li>Zonas de descanso y bancas</li>
+                                    <li>Eventos culturales ocasionales</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pricing-table featured">
+                            <h3>Tour Guiado Histórico</h3>
+                            <div class="price-amount">$20.000</div>
+                            <p class="price-note">Por persona</p>
+                            <div class="included-list">
+                                <ul>
+                                    <li>Todo lo de visita libre +</li>
+                                    <li>Guía histórico especializado</li>
+                                    <li>Historia del Bolívar Desnudo</li>
+                                    <li>Recorrido por edificios históricos</li>
+                                    <li>Degustación de café local</li>
+                                    <li>Mapa histórico de regalo</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Galería Deslizante -->
+            <div class="gallery-section">
+                <h2><i class="fas fa-images" style="color: #F1C40F;"></i> La Plaza y sus Alrededores</h2>
+                <div class="gallery-slider">
+                    <div class="gallery-track">
+                        <div class="gallery-slide">
+                            <img src="https://images.unsplash.com/photo-1581093458791-8a6b6d47e744?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Plaza de Bolívar de Pereira">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Bolívar Desnudo - Monumento">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://images.unsplash.com/photo-1581093459143-bf8bc31b8d01?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Catedral de Pereira">
+                        </div>
+                    </div>
+                    <button class="gallery-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="gallery-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="gallery-indicators">
+                    <span class="indicator active"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                </div>
+            </div>
+
+            <footer>
+                <div class="container">
+                    <div class="footer-content">
+                        <div class="footer-section">
+                            <h3><i class="fas fa-mountain"></i> Magia Cafetera</h3>
+                            <p>Descubre la belleza y cultura del corazón cafetero colombiano.</p>
+                        </div>
+                        <div class="footer-section">
+                            <h4>Contacto</h4>
+                            <p><i class="fas fa-phone"></i> +57 321 293 2150</p>
+                            <p><i class="fas fa-envelope"></i> info@magiacafetera.com</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // Mapa Interactivo
+        var map = L.map('map').setView([4.813, -75.696], 16);
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+        
+        L.marker([4.813, -75.696]).addTo(map)
+            .bindPopup(`
+                <div style="text-align: center;">
+                    <h3 style="margin: 0 0 10px 0; color: #27AE60;">Plaza de Bolívar</h3>
+                    <p style="margin: 0;"><strong>Centro de Pereira</strong></p>
+                    <p style="margin: 5px 0;">Bolívar Desnudo - Monumento histórico</p>
+                    <p style="margin: 0;"><em>Acceso libre 24 horas</em></p>
+                </div>
+            `)
+            .openPopup();
+
+        // Galería Deslizante
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.querySelector('.gallery-track');
+            const slides = document.querySelectorAll('.gallery-slide');
+            const prevBtn = document.querySelector('.gallery-prev');
+            const nextBtn = document.querySelector('.gallery-next');
+            const indicators = document.querySelectorAll('.indicator');
+            let currentIndex = 0;
+            let autoSlideInterval;
+
+            function updateGallery() {
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                indicators.forEach((indicator, index) => {
+                    indicator.classList.toggle('active', index === currentIndex);
+                });
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateGallery();
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateGallery();
+            }
+
+            nextBtn.addEventListener('click', function() {
+                nextSlide();
+                resetAutoSlide();
+            });
+
+            prevBtn.addEventListener('click', function() {
+                prevSlide();
+                resetAutoSlide();
+            });
+
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', function() {
+                    currentIndex = index;
+                    updateGallery();
+                    resetAutoSlide();
+                });
+            });
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 5000);
+            }
+
+            function resetAutoSlide() {
+                clearInterval(autoSlideInterval);
+                startAutoSlide();
+            }
+
+            startAutoSlide();
+
+            const gallery = document.querySelector('.gallery-slider');
+            gallery.addEventListener('mouseenter', () => {
+                clearInterval(autoSlideInterval);
+            });
+
+            gallery.addEventListener('mouseleave', () => {
+                startAutoSlide();
+            });
+        });
+
+        // Menú móvil
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        this.classList.toggle('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
