@@ -55,7 +55,7 @@
             <div class="info-grid">
                 <!-- Tarjeta de Información Básica -->
                 <div class="info-card basic-info">
-                    <h2><i class="fas fa-info-circle"></i> Información Esencial</h2>
+                    <h2><i class="fas fa-info-circle" style="color: #27AE60;"></i> Información Esencial</h2>
                     <div class="info-items">
                         <div class="info-item">
                             <strong>Ubicación:</strong>
@@ -63,116 +63,479 @@
                         </div>
                         <div class="info-item">
                             <strong>Horario:</strong>
-                            <span>8:00 AM - 6:00 PM</span>
+                            <span>8:00 AM - 6:00 PM todos los días</span>
                         </div>
                         <div class="info-item">
                             <strong>Temperatura aguas:</strong>
-                            <span>28°C - 40°C</span>
+                            <span>28°C - 40°C (variada por piscinas)</span>
                         </div>
                         <div class="info-item">
                             <strong>Recomendado para:</strong>
-                            <span>Familias, parejas, relax</span>
+                            <span>Familias, parejas, relax terapéutico</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Duración recomendada:</strong>
+                            <span>3-4 horas</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Mejor época:</strong>
+                            <span>Todo el año (cubierto en lluvia)</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Tarjeta de Precios -->
                 <div class="info-card pricing-card">
-                    <h2><i class="fas fa-tags"></i> Precios y Tarifas</h2>
+                    <h2><i class="fas fa-tags" style="color: #E67E22;"></i> Precios y Tarifas</h2>
                     <div class="pricing-tables">
                         <div class="pricing-table">
                             <h3>Precio Base</h3>
                             <div class="price-amount">$35.000</div>
-                            <p>Incluye:</p>
-                            <ul>
-                                <li>Acceso a piscinas termales</li>
-                                <li>Zonas de descanso</li>
-                                <li>Vestier y duchas</li>
-                            </ul>
+                            <p class="price-note">Por persona</p>
+                            <div class="included-list">
+                                <p><strong>Incluye:</strong></p>
+                                <ul>
+                                    <li>Acceso a todas las piscinas termales</li>
+                                    <li>Zonas de descanso y hamacas</li>
+                                    <li>Vestier y duchas</li>
+                                    <li>Lockers de seguridad</li>
+                                    <li>Zonas verdes para picnic</li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="pricing-table featured">
-                            <h3>Con Adicionales</h3>
+                            <h3>Experiencia Completa</h3>
                             <div class="price-amount">$65.000</div>
-                            <p>Incluye todo lo anterior +:</p>
-                            <ul>
-                                <li>Masaje relajante (30 min)</li>
-                                <li>Almuerzo típico</li>
-                                <li>Tour guiado por senderos</li>
-                                <li>Barro volcánico</li>
-                            </ul>
+                            <p class="price-note">Por persona</p>
+                            <div class="included-list">
+                                <p><strong>Incluye todo lo anterior +:</strong></p>
+                                <ul>
+                                    <li>Masaje relajante (30 minutos)</li>
+                                    <li>Almuerzo típico de la región</li>
+                                    <li>Tour guiado por senderos ecológicos</li>
+                                    <li>Tratamiento con barro volcánico</li>
+                                    <li>Bebida de bienvenida</li>
+                                    <li>Toalla y bata incluida</li>
+                                </ul>
+                            </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Información Detallada -->
+            <div class="info-card full-width">
+                <h2><i class="fas fa-water" style="color: #3498DB;"></i> Sobre los Termales</h2>
+                <div class="detailed-info">
+                    <div class="info-column">
+                        <h3>Características Únicas</h3>
+                        <ul>
+                            <li><strong>Aguas volcánicas:</strong> Provenientes del Parque Nacional Los Nevados</li>
+                            <li><strong>Minerales naturales:</strong> Rico en azufre, magnesio y calcio</li>
+                            <li><strong>Beneficios terapéuticos:</strong> Alivia dolores musculares y estrés</li>
+                            <li><strong>Piscinas variadas:</strong> Diferentes temperaturas y profundidades</li>
+                            <li><strong>Entorno natural:</strong> Rodeado de bosque nativo y quebradas</li>
+                        </ul>
+                    </div>
+                    <div class="info-column">
+                        <h3>Recomendaciones</h3>
+                        <ul>
+                            <li>Llevar traje de baio y sandalias</li>
+                            <li>Protector solar y gorra</li>
+                            <li>Hidratación constante</li>
+                            <li>Ropa cómoda para cambiar</li>
+                            <li>Cámara fotográfica</li>
+                            <li>Toalla (si no lleva paquete completo)</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
             <!-- Mapa Interactivo -->
             <div class="map-section">
-                <h2><i class="fas fa-map-marked-alt"></i> Ubicación</h2>
-                <div id="map" style="height: 400px; border-radius: 15px; margin-top: 1rem;"></div>
+                <h2><i class="fas fa-map-marked-alt" style="color: #9B59B6;"></i> ¿Cómo Llegar?</h2>
+                <div class="directions">
+                    <div class="transport-options">
+                        <div class="transport-card">
+                            <i class="fas fa-car" style="color: #E74C3C;"></i>
+                            <h4>En Carro</h4>
+                            <p>Desde Pereira: 45 minutos<br>Vía Santa Rosa de Cabal</p>
+                        </div>
+                        <div class="transport-card">
+                            <i class="fas fa-bus" style="color: #F39C12;"></i>
+                            <h4>En Bus</h4>
+                            <p>Terminal Pereira → Santa Rosa<br>Frecuencia: cada 30 min</p>
+                        </div>
+                        <div class="transport-card">
+                            <i class="fas fa-taxi" style="color: #27AE60;"></i>
+                            <h4>Taxi</h4>
+                            <p>Desde Pereira: $45.000 aprox.<br>Servicio puerta a puerta</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="map" style="height: 400px; border-radius: 15px; margin-top: 2rem;"></div>
             </div>
 
             <!-- Galería Deslizante -->
             <div class="gallery-section">
-                <h2><i class="fas fa-images"></i> Galería</h2>
+                <h2><i class="fas fa-images" style="color: #F1C40F;"></i> Galería de Imágenes</h2>
                 <div class="gallery-slider">
                     <div class="gallery-track">
                         <div class="gallery-slide">
-                            <img src="https://images.unsplash.com/photo-1580234811497-9df7fd2f357e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Termales Santa Rosa">
+                            <img src="https://images.unsplash.com/photo-1580234811497-9df7fd2f357e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Piscinas termales naturales">
                         </div>
                         <div class="gallery-slide">
-                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Aguas Termales">
+                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Aguas termales en la montaña">
                         </div>
                         <div class="gallery-slide">
-                            <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Naturaleza">
+                            <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Naturaleza alrededor de los termales">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://images.unsplash.com/photo-1599423300746-b7cf4a7a7de0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Relajación en aguas termales">
                         </div>
                     </div>
                     <button class="gallery-prev"><i class="fas fa-chevron-left"></i></button>
                     <button class="gallery-next"><i class="fas fa-chevron-right"></i></button>
                 </div>
+                <div class="gallery-indicators">
+                    <span class="indicator active"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                </div>
+            </div>
+
+            <!-- Tips Adicionales -->
+            <div class="info-card tips-card">
+                <h2><i class="fas fa-lightbulb" style="color: #1ABC9C;"></i> Tips para tu Visita</h2>
+                <div class="tips-grid">
+                    <div class="tip-item">
+                        <i class="fas fa-clock"></i>
+                        <h4>Mejor Horario</h4>
+                        <p>Visita en la mañana (8am-11am) para evitar multitudes y disfrutar de aguas más limpias.</p>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-utensils"></i>
+                        <h4>Alimentación</h4>
+                        <p>El complejo cuenta con restaurante, pero puedes llevar snacks y bebidas no alcohólicas.</p>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-user-friends"></i>
+                        <h4>Para Familias</h4>
+                        <p>Piscinas especiales para niños y zonas de juego seguras. Supervisión constante requerida.</p>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-camera"></i>
+                        <h4>Fotografía</h4>
+                        <p>Mejores fotos al atardecer. Lleva protector para tu cámara o teléfono por la humedad.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-mountain"></i> Magia Cafetera</h3>
+                    <p>Descubre la belleza y cultura del corazón cafetero colombiano.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#rutas">Rutas</a></li>
+                        <li><a href="index.html#lugares">Lugares</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> +57 6 324 8100</p>
+                    <p><i class="fas fa-envelope"></i> info@magiacafetera.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Magia Cafetera Risaralda. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
-        // Mapa
+        // Mapa Interactivo
         var map = L.map('map').setView([4.869, -75.621], 15);
+        
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
         
-        L.marker([4.869, -75.621]).addTo(map)
-            .bindPopup('Termales de Santa Rosa<br>Aguas medicinales volcánicas')
+        var termalesMarker = L.marker([4.869, -75.621]).addTo(map)
+            .bindPopup(`
+                <div style="text-align: center;">
+                    <h3 style="margin: 0 0 10px 0; color: #27AE60;">Termales de Santa Rosa</h3>
+                    <p style="margin: 0;"><strong>Santa Rosa de Cabal, Risaralda</strong></p>
+                    <p style="margin: 5px 0;">Aguas medicinales volcánicas</p>
+                    <p style="margin: 0;"><em>Horario: 8:00 AM - 6:00 PM</em></p>
+                </div>
+            `)
             .openPopup();
 
-        // Galería deslizante
+        // Galería Deslizante
         document.addEventListener('DOMContentLoaded', function() {
             const track = document.querySelector('.gallery-track');
             const slides = document.querySelectorAll('.gallery-slide');
             const prevBtn = document.querySelector('.gallery-prev');
             const nextBtn = document.querySelector('.gallery-next');
+            const indicators = document.querySelectorAll('.indicator');
             let currentIndex = 0;
+            let autoSlideInterval;
 
             function updateGallery() {
                 track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                
+                // Actualizar indicadores
+                indicators.forEach((indicator, index) => {
+                    indicator.classList.toggle('active', index === currentIndex);
+                });
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateGallery();
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateGallery();
             }
 
             nextBtn.addEventListener('click', function() {
-                currentIndex = (currentIndex + 1) % slides.length;
-                updateGallery();
+                nextSlide();
+                resetAutoSlide();
             });
 
             prevBtn.addEventListener('click', function() {
-                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-                updateGallery();
+                prevSlide();
+                resetAutoSlide();
             });
 
-            // Auto-deslizamiento cada 5 segundos
-            setInterval(() => {
-                currentIndex = (currentIndex + 1) % slides.length;
-                updateGallery();
-            }, 5000);
+            // Click en indicadores
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', function() {
+                    currentIndex = index;
+                    updateGallery();
+                    resetAutoSlide();
+                });
+            });
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 5000);
+            }
+
+            function resetAutoSlide() {
+                clearInterval(autoSlideInterval);
+                startAutoSlide();
+            }
+
+            // Iniciar deslizamiento automático
+            startAutoSlide();
+
+            // Pausar al hacer hover
+            const gallery = document.querySelector('.gallery-slider');
+            gallery.addEventListener('mouseenter', () => {
+                clearInterval(autoSlideInterval);
+            });
+
+            gallery.addEventListener('mouseleave', () => {
+                startAutoSlide();
+            });
+        });
+
+        // JavaScript para menú móvil
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        this.classList.toggle('active');
+                    }
+                });
+            });
         });
     </script>
+
+    <style>
+        /* Estilos adicionales para la subpágina */
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .detailed-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .info-column h3 {
+            color: var(--verde-oscuro);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .info-column ul {
+            list-style: none;
+        }
+
+        .info-column li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--gris-claro);
+            color: var(--gris);
+        }
+
+        .info-column li:last-child {
+            border-bottom: none;
+        }
+
+        .included-list ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .included-list li {
+            padding: 0.5rem 0;
+            color: var(--gris);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .included-list li::before {
+            content: '✓';
+            color: var(--verde-medio);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .directions {
+            margin-bottom: 2rem;
+        }
+
+        .transport-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .transport-card {
+            background: var(--gris-claro);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .transport-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .transport-card i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .transport-card h4 {
+            color: var(--verde-oscuro);
+            margin-bottom: 0.5rem;
+        }
+
+        .transport-card p {
+            color: var(--gris);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .gallery-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--gris-claro);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .indicator.active {
+            background: var(--verde-medio);
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tip-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--gris-claro);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .tip-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .tip-item i {
+            font-size: 2rem;
+            color: var(--verde-medio);
+            margin-bottom: 1rem;
+        }
+
+        .tip-item h4 {
+            color: var(--verde-oscuro);
+            margin-bottom: 0.5rem;
+        }
+
+        .tip-item p {
+            color: var(--gris);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .detailed-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .transport-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </body>
 </html>
