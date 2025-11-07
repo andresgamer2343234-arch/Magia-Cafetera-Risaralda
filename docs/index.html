@@ -5,110 +5,362 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magia Cafetera - Risaralda, Colombia</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Header y Navegación -->
+    <!-- Header Mejorado -->
     <header>
         <nav class="navbar">
             <div class="nav-container">
-                <h1 class="logo">🌿 Magia Cafetera</h1>
-                <ul class="nav-menu">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#rutas">Rutas</a></li>
-                    <li><a href="#lugares">Lugares</a></li>
-                    <li><a href="#galeria">Galería</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+                <h1 class="logo"><i class="fas fa-mountain"></i> Magia Cafetera</h1>
+                <div class="nav-toggle" id="navToggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="#rutas"><i class="fas fa-route"></i> Rutas</a></li>
+                    <li><a href="#itinerarios"><i class="fas fa-calendar-alt"></i> Itinerarios</a></li>
+                    <li><a href="#lugares"><i class="fas fa-map-marker-alt"></i> Lugares</a></li>
+                    <li><a href="#contacto"><i class="fas fa-phone"></i> Contacto</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <!-- Sección Hero -->
+    <!-- Hero Section Mejorada -->
     <section id="inicio" class="hero">
         <div class="hero-content">
-            <h2>Descubre el Corazón del Café Colombiano</h2>
-            <p>Risaralda - Donde la naturaleza y el café se encuentran</p>
-            <a href="#rutas" class="cta-button">Explora Nuestras Rutas</a>
+            <h1>Descubre el Corazón del Café Colombiano</h1>
+            <p>Vive experiencias únicas en Risaralda - Donde la naturaleza y el café se encuentran</p>
+            <div class="hero-buttons">
+                <a href="#rutas" class="cta-button primary"><i class="fas fa-route"></i> Ver Rutas</a>
+                <a href="#contacto" class="cta-button secondary"><i class="fas fa-phone"></i> Contactar</a>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-card">
+                <h3>3+</h3>
+                <p>Rutas Turísticas</p>
+            </div>
+            <div class="stat-card">
+                <h3>15+</h3>
+                <p>Lugares Únicos</p>
+            </div>
+            <div class="stat-card">
+                <h3>100%</h3>
+                <p>Experiencias Auténticas</p>
+            </div>
         </div>
     </section>
 
-    <!-- Sección Rutas -->
+    <!-- Sección Rutas Mejorada -->
     <section id="rutas" class="rutas">
         <div class="container">
-            <h2>Rutas Turísticas</h2>
+            <h2 class="section-title">Nuestras Rutas Turísticas</h2>
+            <p class="section-subtitle">Descubre Risaralda a tu ritmo con nuestros paquetes personalizados</p>
+            
             <div class="rutas-grid">
-                <div class="ruta-card">
-                    <h3>🌅 3 Días - Esencia Cafetera</h3>
-                    <p><strong>Precio: $424.000 COP</strong></p>
-                    <ul>
-                        <li>Pereira urbana y natural</li>
-                        <li>Termales de Santa Rosa</li>
-                        <li>Joyas escondidas</li>
+                <!-- Ruta 3 Días -->
+                <div class="ruta-card featured">
+                    <div class="ruta-header">
+                        <h3><i class="fas fa-star"></i> Esencia Cafetera</h3>
+                        <span class="ruta-duration">3 Días / 2 Noches</span>
+                    </div>
+                    <div class="ruta-price">
+                        <span class="price">$424.000</span>
+                        <span class="price-note">COP por persona</span>
+                    </div>
+                    <ul class="ruta-features">
+                        <li><i class="fas fa-check"></i> Pereira urbana y natural</li>
+                        <li><i class="fas fa-check"></i> Termales de Santa Rosa</li>
+                        <li><i class="fas fa-check"></i> Cascada Santa Clara</li>
+                        <li><i class="fas fa-check"></i> Finca cafetera auténtica</li>
+                        <li><i class="fas fa-check"></i> Alojamiento incluido</li>
                     </ul>
+                    <div class="ruta-actions">
+                        <button class="btn-primary" onclick="toggleDetails('detalles-3dias')">
+                            <i class="fas fa-info-circle"></i> Ver Detalles
+                        </button>
+                        <button class="btn-secondary">
+                            <i class="fas fa-shopping-cart"></i> Reservar
+                        </button>
+                    </div>
+                    <!-- Detalles Expandibles -->
+                    <div id="detalles-3dias" class="ruta-detalles">
+                        <h4>Itinerario Detallado:</h4>
+                        <div class="itinerario-dia">
+                            <h5><i class="fas fa-sun"></i> Día 1: Pereira</h5>
+                            <ul>
+                                <li>09:00 - Plaza de Bolívar y Bolívar Desnudo</li>
+                                <li>10:30 - Bioparque Ukumarí</li>
+                                <li>14:00 - Almuerzo típico paisa</li>
+                                <li>16:00 - Centro Cultural Lucy Tejada</li>
+                                <li>18:00 - Mirador al atardecer</li>
+                            </ul>
+                        </div>
+                        <div class="itinerario-dia">
+                            <h5><i class="fas fa-water"></i> Día 2: Santa Rosa</h5>
+                            <ul>
+                                <li>08:00 - Termales medicinales</li>
+                                <li>12:00 - Cascada Santa Clara</li>
+                                <li>15:00 - Tour finca cafetera</li>
+                                <li>19:00 - Cena tradicional</li>
+                            </ul>
+                        </div>
+                        <div class="itinerario-dia">
+                            <h5><i class="fas fa-hiking"></i> Día 3: Naturaleza</h5>
+                            <ul>
+                                <li>08:30 - Sendero La Marcada</li>
+                                <li>13:30 - Almuerzo en Dosquebradas</li>
+                                <li>15:30 - Reserva Natural</li>
+                                <li>18:00 - Despedida</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Ruta 5 Días -->
                 <div class="ruta-card">
-                    <h3>🌿 5 Días - Explorador</h3>
-                    <p><strong>Precio: $706.000 COP</strong></p>
-                    <ul>
-                        <li>Incluye ruta 3 días +</li>
-                        <li>Valle del Cocora</li>
-                        <li>Cultura cafetera premium</li>
+                    <div class="ruta-header">
+                        <h3><i class="fas fa-compass"></i> Explorador Total</h3>
+                        <span class="ruta-duration">5 Días / 4 Noches</span>
+                    </div>
+                    <div class="ruta-price">
+                        <span class="price">$706.000</span>
+                        <span class="price-note">COP por persona</span>
+                    </div>
+                    <ul class="ruta-features">
+                        <li><i class="fas fa-check"></i> Incluye ruta 3 días +</li>
+                        <li><i class="fas fa-check"></i> Valle del Cocora</li>
+                        <li><i class="fas fa-check"></i> Pueblo de Salento</li>
+                        <li><i class="fas fa-check"></i> Tour café premium</li>
+                        <li><i class="fas fa-check"></i> 4 noches de alojamiento</li>
                     </ul>
+                    <div class="ruta-actions">
+                        <button class="btn-primary" onclick="toggleDetails('detalles-5dias')">
+                            <i class="fas fa-info-circle"></i> Ver Detalles
+                        </button>
+                        <button class="btn-secondary">
+                            <i class="fas fa-shopping-cart"></i> Reservar
+                        </button>
+                    </div>
+                    <div id="detalles-5dias" class="ruta-detalles">
+                        <h4>Incluye todo de 3 días +:</h4>
+                        <div class="itinerario-dia">
+                            <h5><i class="fas fa-tree"></i> Día 4: Valle del Cocora</h5>
+                            <ul>
+                                <li>07:00 - Traslado a Salento</li>
+                                <li>09:00 - Palmas de cera gigantes</li>
+                                <li>12:00 - Almuerzo con trucha fresca</li>
+                                <li>15:00 - Recorrido por Salento</li>
+                                <li>17:00 - Mirador panorámico</li>
+                            </ul>
+                        </div>
+                        <div class="itinerario-dia">
+                            <h5><i class="fas fa-coffee"></i> Día 5: Cultura Cafetera</h5>
+                            <ul>
+                                <li>08:00 - Finca especializada</li>
+                                <li>10:00 - Proceso del café artesanal</li>
+                                <li>12:00 - Catación y degustación</li>
+                                <li>14:00 - Almuerzo gourmet</li>
+                                <li>16:00 - Compras de souvenirs</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Ruta 7 Días -->
                 <div class="ruta-card">
-                    <h3>🏔️ 7 Días - Experiencia Completa</h3>
-                    <p><strong>Precio: $1.081.000 COP</strong></p>
-                    <ul>
-                        <li>Incluye ruta 5 días +</li>
-                        <li>Parque Los Nevados</li>
-                        <li>Spa y cultura</li>
+                    <div class="ruta-header">
+                        <h3><i class="fas fa-crown"></i> Experiencia Premium</h3>
+                        <span class="ruta-duration">7 Días / 6 Noches</span>
+                    </div>
+                    <div class="ruta-price">
+                        <span class="price">$1.081.000</span>
+                        <span class="price-note">COP por persona</span>
+                    </div>
+                    <ul class="ruta-features">
+                        <li><i class="fas fa-check"></i> Incluye ruta 5 días +</li>
+                        <li><i class="fas fa-check"></i> Parque Los Nevados</li>
+                        <li><i class="fas fa-check"></i> Spa y bienestar</li>
+                        <li><i class="fas fa-check"></i> Museo del Oro</li>
+                        <li><i class="fas fa-check"></i> Cena de clausura gourmet</li>
                     </ul>
+                    <div class="ruta-actions">
+                        <button class="btn-primary" onclick="toggleDetails('detalles-7dias')">
+                            <i class="fas fa-info-circle"></i> Ver Detalles
+                        </button>
+                        <button class="btn-secondary">
+                            <i class="fas fa-shopping-cart"></i> Reservar
+                        </button>
+                    </div>
+                    <div id="detalles-7dias" class="ruta-detalles">
+                        <h4>Incluye todo de 5 días +:</h4>
+                        <div class="itinerario-dia">
+                            <h5><i class="fas fa-mountain"></i> Día 6: Aventura Extrema</h5>
+                            <ul>
+                                <li>06:00 - Tour al páramo</li>
+                                <li>08:00 - Avistamiento de frailejones</li>
+                                <li>12:00 - Almuerzo en altura</li>
+                                <li>14:00 - Lagunas glaciares</li>
+                                <li>17:00 - Regreso y descanso</li>
+                            </ul>
+                        </div>
+                        <div class="itinerario-dia">
+                            <h5><i class="fas fa-spa"></i> Día 7: Cultura y Relax</h5>
+                            <ul>
+                                <li>09:00 - Museo del Oro Quimbaya</li>
+                                <li>11:00 - Taller de artesanías</li>
+                                <li>14:00 - Spa con café y chocolate</li>
+                                <li>19:00 - Cena de clausura</li>
+                                <li>21:00 - Traslado al aeropuerto</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección Lugares Destacados -->
-    <section id="lugares" class="lugares">
+    <!-- Sección Itinerarios -->
+    <section id="itinerarios" class="itinerarios">
         <div class="container">
-            <h2>Lugares Imperdibles</h2>
-            <div class="lugares-grid">
-                <div class="lugar-card">
-                    <h3>⭐ Termales de Santa Rosa</h3>
-                    <p>Aguas medicinales volcánicas en medio de la naturaleza</p>
+            <h2 class="section-title">Itinerarios Visuales</h2>
+            <p class="section-subtitle">Planifica tu aventura día a día</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-day">Día 1</div>
+                    <div class="timeline-content">
+                        <h4>Pereira Urbana y Natural</h4>
+                        <p>Descubre la ciudad y su conexión con la naturaleza</p>
+                        <ul>
+                            <li>Plaza de Bolívar</li>
+                            <li>Bioparque Ukumarí</li>
+                            <li>Centro Cultural</li>
+                            <li>Mirador</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="lugar-card">
-                    <h3>⭐ Valle del Cocora</h3>
-                    <p>Bosque de palmas de cera, el árbol nacional de Colombia</p>
+                <div class="timeline-item">
+                    <div class="timeline-day">Día 2</div>
+                    <div class="timeline-content">
+                        <h4>Santa Rosa Termal</h4>
+                        <p>Relájate en aguas volcánicas y descubre cascadas</p>
+                        <ul>
+                            <li>Termales medicinales</li>
+                            <li>Cascada Santa Clara</li>
+                            <li>Finca cafetera</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="lugar-card">
-                    <h3>⭐ Bioparque Ukumarí</h3>
-                    <p>Santuario de vida silvestre y conservación</p>
-                </div>
+                <!-- Más días del itinerario -->
             </div>
         </div>
     </section>
 
-    <!-- Sección Contacto -->
+    <!-- Sección Contacto Mejorada -->
     <section id="contacto" class="contacto">
         <div class="container">
-            <h2>Contacto</h2>
-            <div class="contacto-content">
+            <h2 class="section-title">¿Listo para tu Aventura?</h2>
+            <p class="section-subtitle">Contáctanos para personalizar tu experiencia</p>
+            
+            <div class="contacto-grid">
                 <div class="contacto-info">
-                    <h3>📞 Información de Contacto</h3>
-                    <p><strong>Teléfono:</strong> +57 6 324 8100</p>
-                    <p><strong>Email:</strong> info@magiacafetera.com</p>
-                    <p><strong>Ubicación:</strong> Risaralda, Colombia</p>
+                    <div class="contacto-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>+57 6 324 8100</p>
+                        </div>
+                    </div>
+                    <div class="contacto-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@magiacafetera.com</p>
+                        </div>
+                    </div>
+                    <div class="contacto-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Ubicación</h4>
+                            <p>Risaralda, Colombia</p>
+                        </div>
+                    </div>
                 </div>
+                
+                <form class="contacto-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Tu email" required>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Selecciona una ruta</option>
+                            <option value="3dias">Esencia Cafetera (3 días)</option>
+                            <option value="5dias">Explorador Total (5 días)</option>
+                            <option value="7dias">Experiencia Premium (7 días)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Tu mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-paper-plane"></i> Enviar Consulta
+                    </button>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer Mejorado -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Magia Cafetera Risaralda. Todos los derechos reservados.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-mountain"></i> Magia Cafetera</h3>
+                    <p>Descubre la belleza y cultura del corazón cafetero colombiano.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#rutas">Rutas</a></li>
+                        <li><a href="#itinerarios">Itinerarios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> +57 6 324 8100</p>
+                    <p><i class="fas fa-envelope"></i> info@magiacafetera.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Magia Cafetera Risaralda. Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
+
+    <script>
+        // JavaScript para funcionalidades
+        function toggleDetails(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle('active');
+        }
+
+        // Menú móvil
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
