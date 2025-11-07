@@ -1,1 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bioparque Ukumarí - Magia Cafetera</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo"><i class="fas fa-mountain"></i> Magia Cafetera</h1>
+                <div class="nav-toggle" id="navToggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-map-marker-alt"></i> Lugares <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="termales-santa-rosa.html">Termales de Santa Rosa</a></li>
+                            <li><a href="valle-cocora.html">Valle del Cocora</a></li>
+                            <li><a href="bioparque-ukumari.html">Bioparque Ukumarí</a></li>
+                            <li><a href="plaza-bolivar.html">Plaza de Bolívar</a></li>
+                            <li><a href="cascada-santa-clara.html">Cascada Santa Clara</a></li>
+                            <li><a href="mirador-pereira.html">Mirador de Pereira</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#rutas"><i class="fas fa-route"></i> Rutas</a></li>
+                    <li><a href="index.html#contacto"><i class="fas fa-phone"></i> Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
+    <section class="subpage-hero" style="background: linear-gradient(rgba(241, 196, 15, 0.7), rgba(46, 125, 50, 0.7)), url('https://images.unsplash.com/photo-1550358864-518f202c02ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Bioparque Ukumarí</h1>
+                <p>Santuario de vida silvestre y conservación en Pereira</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="subpage-content">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card basic-info">
+                    <h2><i class="fas fa-info-circle" style="color: #27AE60;"></i> Información Práctica</h2>
+                    <div class="bullet-list">
+                        <div class="bullet-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Ubicación:</strong>
+                                <span>Pereira, Risaralda</span>
+                            </div>
+                        </div>
+                        <div class="bullet-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Horario:</strong>
+                                <span>9:00 AM - 5:00 PM (Martes a Domingo)</span>
+                            </div>
+                        </div>
+                        <div class="bullet-item">
+                            <i class="fas fa-paw"></i>
+                            <div>
+                                <strong>Especies:</strong>
+                                <span>120+ especies de fauna colombiana</span>
+                            </div>
+                        </div>
+                        <div class="bullet-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <strong>Ideal para:</strong>
+                                <span>Familias, educación, amantes de animales</span>
+                            </div>
+                        </div>
+                        <div class="bullet-item">
+                            <i class="fas fa-hourglass-half"></i>
+                            <div>
+                                <strong>Duración recomendada:</strong>
+                                <span>3-4 horas para recorrido completo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card pricing-card">
+                    <h2><i class="fas fa-tags" style="color: #E67E22;"></i> Precios y Entradas</h2>
+                    <div class="pricing-tables">
+                        <div class="pricing-table">
+                            <h3>Entrada General</h3>
+                            <div class="price-amount">$25.000</div>
+                            <p class="price-note">Adultos</p>
+                            <div class="included-list">
+                                <ul>
+                                    <li>Acceso a todas las exhibiciones</li>
+                                    <li>Recorrido por hábitats naturales</li>
+                                    <li>Zonas de descanso y alimentación</li>
+                                    <li>Área de juegos infantiles</li>
+                                    <li>Estacionamiento gratuito</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pricing-table featured">
+                            <h3>Tour Guiado</h3>
+                            <div class="price-amount">$40.000</div>
+                            <p class="price-note">Por persona</p>
+                            <div class="included-list">
+                                <ul>
+                                    <li>Todo lo de entrada general +</li>
+                                    <li>Guía especializado en fauna</li>
+                                    <li>Alimentación de animales incluida</li>
+                                    <li>Acceso a áreas exclusivas</li>
+                                    <li>Fotos con animales permitidas</li>
+                                    <li>Charla educativa incluida</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beneficios y Características -->
+            <div class="info-card full-width benefits-card">
+                <h2><i class="fas fa-seedling" style="color: #27AE60;"></i> Experiencias Únicas</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <i class="fas fa-lion" style="color: #F39C12;"></i>
+                        <h4>Fauna Colombiana</h4>
+                        <p>Observa jaguares, osos andinos, cóndores y más especies nativas en hábitats naturales</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-hiking" style="color: #3498DB;"></i>
+                        <h4>Senderos Ecológicos</h4>
+                        <p>Recorre 4.5 km de senderos through bosques andinos y paisajes únicos</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-graduation-cap" style="color: #9B59B6;"></i>
+                        <h4>Educación Ambiental</h4>
+                        <p>Programas educativos para todas las edades sobre conservación</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-camera" style="color: #E74C3C;"></i>
+                        <h4>Fotografía</h4>
+                        <p>Oportunidades únicas para fotografiar fauna en ambientes controlados</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mapa Interactivo -->
+            <div class="map-section">
+                <h2><i class="fas fa-map-marked-alt" style="color: #9B59B6;"></i> ¿Cómo Llegar?</h2>
+                <div class="directions">
+                    <div class="transport-options">
+                        <div class="transport-card">
+                            <i class="fas fa-car" style="color: #E74C3C;"></i>
+                            <h4>En Carro Particular</h4>
+                            <p><strong>15 minutos</strong> desde centro de Pereira<br>Vía Cerritos</p>
+                        </div>
+                        <div class="transport-card">
+                            <i class="fas fa-bus" style="color: #F39C12;"></i>
+                            <h4>Transporte Público</h4>
+                            <p><strong>Bus</strong> desde Terminal de Pereira<br>Ruta: Universidad Tecnológica</p>
+                        </div>
+                        <div class="transport-card">
+                            <i class="fas fa-taxi" style="color: #27AE60;"></i>
+                            <h4>Servicio de Taxi</h4>
+                            <p><strong>$12.000</strong> aprox. desde centro<br>Servicio puerta a puerta</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="map" style="height: 400px; border-radius: 15px; margin-top: 2rem;"></div>
+            </div>
+
+            <!-- Galería Deslizante -->
+            <div class="gallery-section">
+                <h2><i class="fas fa-images" style="color: #F1C40F;"></i> Nuestros Animales</h2>
+                <div class="gallery-slider">
+                    <div class="gallery-track">
+                        <div class="gallery-slide">
+                            <img src="https://images.unsplash.com/photo-1550358864-518f202c02ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="León en Bioparque Ukumarí">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Aves exóticas colombianas">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://images.unsplash.com/photo-1543946608-33bd17c7d11a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Hábitat natural de animales">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://images.unsplash.com/photo-1574870111867-089858c139af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Senderos del bioparque">
+                        </div>
+                    </div>
+                    <button class="gallery-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="gallery-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="gallery-indicators">
+                    <span class="indicator active"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                </div>
+            </div>
+
+            <!-- Checklist de Preparación -->
+            <div class="info-card checklist-card">
+                <h2><i class="fas fa-clipboard-check" style="color: #1ABC9C;"></i> Prepárate para tu Visita</h2>
+                <div class="checklist-grid">
+                    <div class="checklist-column">
+                        <h4>✅ Qué Llevar</h4>
+                        <ul>
+                            <li>Ropa cómoda y zapatos para caminar</li>
+                            <li>Protector solar y gorra</li>
+                            <li>Agua para hidratación</li>
+                            <li>Cámara fotográfica</li>
+                            <li>Binoculares (opcional)</li>
+                        </ul>
+                    </div>
+                    <div class="checklist-column">
+                        <h4>📝 Recomendaciones</h4>
+                        <ul>
+                            <li>Llegar temprano para ver animales activos</li>
+                            <li>Respetar las normas del parque</li>
+                            <li>No alimentar a los animales</li>
+                            <li>Mantener silencio en áreas de observación</li>
+                            <li>Seguir los senderos marcados</li>
+                        </ul>
+                    </div>
+                    <div class="checklist-column">
+                        <h4>⏰ Horarios Ideales</h4>
+                        <ul>
+                            <li><strong>Mañana:</strong> 9:00 AM - 12:00 PM</li>
+                            <li><strong>Tarde:</strong> 2:00 PM - 4:00 PM</li>
+                            <li><strong>Evitar:</strong> Horas de mucho calor</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-mountain"></i> Magia Cafetera</h3>
+                    <p>Descubre la belleza y cultura del corazón cafetero colombiano.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#rutas">Rutas</a></li>
+                        <li><a href="index.html#lugares">Lugares</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> +57 321 293 2150</p>
+                    <p><i class="fas fa-envelope"></i> info@magiacafetera.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Magia Cafetera Risaralda. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // Mapa Interactivo
+        var map = L.map('map').setView([4.805, -75.696], 15);
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+        
+        L.marker([4.805, -75.696]).addTo(map)
+            .bindPopup(`
+                <div style="text-align: center;">
+                    <h3 style="margin: 0 0 10px 0; color: #27AE60;">Bioparque Ukumarí</h3>
+                    <p style="margin: 0;"><strong>Pereira, Risaralda</strong></p>
+                    <p style="margin: 5px 0;">Santuario de vida silvestre</p>
+                    <p style="margin: 0;"><em>Horario: 9:00 AM - 5:00 PM</em></p>
+                </div>
+            `)
+            .openPopup();
+
+        // Galería Deslizante
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.querySelector('.gallery-track');
+            const slides = document.querySelectorAll('.gallery-slide');
+            const prevBtn = document.querySelector('.gallery-prev');
+            const nextBtn = document.querySelector('.gallery-next');
+            const indicators = document.querySelectorAll('.indicator');
+            let currentIndex = 0;
+            let autoSlideInterval;
+
+            function updateGallery() {
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                indicators.forEach((indicator, index) => {
+                    indicator.classList.toggle('active', index === currentIndex);
+                });
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateGallery();
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateGallery();
+            }
+
+            nextBtn.addEventListener('click', function() {
+                nextSlide();
+                resetAutoSlide();
+            });
+
+            prevBtn.addEventListener('click', function() {
+                prevSlide();
+                resetAutoSlide();
+            });
+
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', function() {
+                    currentIndex = index;
+                    updateGallery();
+                    resetAutoSlide();
+                });
+            });
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 5000);
+            }
+
+            function resetAutoSlide() {
+                clearInterval(autoSlideInterval);
+                startAutoSlide();
+            }
+
+            startAutoSlide();
+
+            const gallery = document.querySelector('.gallery-slider');
+            gallery.addEventListener('mouseenter', () => {
+                clearInterval(autoSlideInterval);
+            });
+
+            gallery.addEventListener('mouseleave', () => {
+                startAutoSlide();
+            });
+        });
+
+        // Menú móvil
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        this.classList.toggle('active');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <style>
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .bullet-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .bullet-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--gris-claro);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .bullet-item:hover {
+            transform: translateX(5px);
+        }
+
+        .bullet-item i {
+            font-size: 1.2rem;
+            color: var(--verde-medio);
+            width: 30px;
+            text-align: center;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: linear-gradient(135deg, var(--gris-claro), #f8f9fa);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-item i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .checklist-column h4 {
+            color: var(--verde-oscuro);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .checklist-column ul {
+            list-style: none;
+        }
+
+        .checklist-column li {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid var(--gris-claro);
+            color: var(--gris);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .checklist-column li:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-column li::before {
+            content: '•';
+            color: var(--verde-medio);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .transport-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .gallery-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--gris-claro);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .indicator.active {
+            background: var(--verde-medio);
+        }
+
+        @media (max-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .checklist-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .transport-options {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>
