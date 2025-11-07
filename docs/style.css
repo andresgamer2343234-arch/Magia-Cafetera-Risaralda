@@ -1,0 +1,243 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #212121;
+    background-color: #F5F5DC; /* Beige */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #2E7D32; /* Verde oscuro */
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #C8E6C9; /* Verde clarito */
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(46, 125, 50, 0.7), rgba(46, 125, 50, 0.7)),
+                url('https://images.unsplash.com/photo-1512521743077-a42eeaaa963c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-top: 60px;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #C8E6C9; /* Verde clarito */
+    color: #2E7D32; /* Verde oscuro */
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: white;
+}
+
+/* Sección Rutas */
+.rutas {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.rutas h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #2E7D32;
+}
+
+.rutas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.ruta-card {
+    background-color: #C8E6C9; /* Verde clarito */
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.ruta-card h3 {
+    color: #2E7D32;
+    margin-bottom: 1rem;
+}
+
+.ruta-card ul {
+    list-style: none;
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.ruta-card li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.ruta-card li:before {
+    content: "✓";
+    color: #2E7D32;
+    position: absolute;
+    left: 0;
+}
+
+/* Sección Lugares */
+.lugares {
+    padding: 80px 0;
+    background-color: #F5F5DC; /* Beige */
+}
+
+.lugares h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #2E7D32;
+}
+
+.lugares-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.lugar-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.lugar-card h3 {
+    color: #2E7D32;
+    margin-bottom: 1rem;
+}
+
+/* Sección Contacto */
+.contacto {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.contacto h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #2E7D32;
+}
+
+.contacto-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contacto-info {
+    text-align: center;
+}
+
+.contacto-info h3 {
+    color: #2E7D32;
+    margin-bottom: 1.5rem;
+}
+
+.contacto-info p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #2E7D32;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+    
+    .rutas-grid,
+    .lugares-grid {
+        grid-template-columns: 1fr;
+    }
+}
