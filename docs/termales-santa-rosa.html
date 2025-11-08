@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vistas Panorámicas</title>
+    <title>Termales de Santa Rosa</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background: linear-gradient(135deg, #1a6c2a, #1f8fb2, #2dfdc3);
             color: #fff;
             min-height: 100vh;
             padding-bottom: 50px;
@@ -67,14 +67,14 @@
             font-size: 1.1rem;
         }
         
-        .gallery {
+        .services {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 50px;
         }
         
-        .gallery-item {
+        .service-item {
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
@@ -91,25 +91,25 @@
             position: relative;
         }
         
-        .gallery-item:hover {
+        .service-item:hover {
             transform: translateY(-10px) scale(1.02);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
         }
         
-        .gallery-icon {
+        .service-icon {
             font-size: 4rem;
             margin-bottom: 20px;
             opacity: 0.8;
         }
         
-        .gallery-title {
+        .service-title {
             font-size: 1.6rem;
             margin-bottom: 15px;
             color: #fff;
             font-weight: 400;
         }
         
-        .gallery-desc {
+        .service-desc {
             font-size: 1rem;
             color: rgba(255, 255, 255, 0.8);
             line-height: 1.6;
@@ -158,11 +158,11 @@
                 font-size: 2.8rem;
             }
             
-            .gallery {
+            .services {
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             }
             
-            .gallery-item {
+            .service-item {
                 height: 280px;
             }
         }
@@ -172,11 +172,11 @@
                 font-size: 2.2rem;
             }
             
-            .gallery {
+            .services {
                 grid-template-columns: 1fr;
             }
             
-            .gallery-item {
+            .service-item {
                 height: 250px;
             }
         }
@@ -184,75 +184,75 @@
 </head>
 <body>
     <header>
-        <h1>Vistas Panorámicas</h1>
-        <p class="subtitle">Descubre los paisajes más impresionantes del mundo desde una perspectiva única</p>
+        <h1>Termales de Santa Rosa</h1>
+        <p class="subtitle">Relájate y rejuvenece en nuestras aguas termales naturales</p>
     </header>
     
     <div class="container">
         <section class="intro">
-            <p>Las vistas panorámicas nos ofrecen una perspectiva única de nuestro planeta, permitiéndonos apreciar la inmensidad y belleza de la naturaleza. Desde majestuosas montañas hasta extensos océanos, estos paisajes capturan momentos de asombrosa belleza.</p>
-            <p>Explora nuestra galería conceptual y déjate inspirar por estos increíbles paisajes que nos recuerdan la importancia de preservar y admirar nuestro entorno natural.</p>
+            <p>Los Termales de Santa Rosa ofrecen una experiencia única de relajación y bienestar gracias a sus aguas naturales ricas en minerales. Ubicados en un entorno natural privilegiado, nuestros visitantes pueden disfrutar de baños termales, tratamientos de spa y actividades al aire libre.</p>
+            <p>Nuestras instalaciones están diseñadas para armonizar con el entorno natural, ofreciendo una experiencia de conexión con la naturaleza mientras te beneficias de las propiedades terapéuticas de nuestras aguas termales.</p>
         </section>
         
         <div class="features">
             <div class="feature">
-                <div class="feature-icon">🌄</div>
-                <h3 class="feature-title">Amaneceres</h3>
-                <p class="feature-desc">Los primeros rayos del sol iluminando paisajes imponentes</p>
+                <div class="feature-icon">🌡️</div>
+                <h3 class="feature-title">Aguas Termales</h3>
+                <p class="feature-desc">Aguas naturales ricas en minerales con propiedades terapéuticas</p>
             </div>
             <div class="feature">
-                <div class="feature-icon">🏔️</div>
-                <h3 class="feature-title">Montañas</h3>
-                <p class="feature-desc">Cumbres que desafían las nubes y ofrecen vistas infinitas</p>
+                <div class="feature-icon">🧖</div>
+                <h3 class="feature-title">Spa Natural</h3>
+                <p class="feature-desc">Tratamientos relajantes en un entorno completamente natural</p>
             </div>
             <div class="feature">
-                <div class="feature-icon">🌊</div>
-                <h3 class="feature-title">Océanos</h3>
-                <p class="feature-desc">Horizontes donde el cielo y el agua se encuentran</p>
+                <div class="feature-icon">🌳</div>
+                <h3 class="feature-title">Entorno Natural</h3>
+                <p class="feature-desc">Ubicados en un paisaje natural privilegiado y preservado</p>
             </div>
         </div>
         
-        <div class="gallery">
-            <div class="gallery-item">
-                <div class="gallery-icon">⛰️</div>
-                <h3 class="gallery-title">Cordillera de los Alpes</h3>
-                <p class="gallery-desc">Impresionante vista de las montañas nevadas al amanecer, con colores que se reflejan en los lagos cristalinos.</p>
+        <div class="services">
+            <div class="service-item">
+                <div class="service-icon">💧</div>
+                <h3 class="service-title">Piscinas Termales</h3>
+                <p class="service-desc">Disfruta de nuestras piscinas de aguas termales a diferentes temperaturas, ideales para la relajación muscular y el alivio del estrés.</p>
             </div>
             
-            <div class="gallery-item">
-                <div class="gallery-icon">🌅</div>
-                <h3 class="gallery-title">Costa del Pacífico</h3>
-                <p class="gallery-desc">Atardecer sobre el océano, donde el cielo y el mar se funden en una paleta de colores vibrantes.</p>
+            <div class="service-item">
+                <div class="service-icon">🧖‍♀️</div>
+                <h3 class="service-title">Baños de Vapor</h3>
+                <p class="service-desc">Experimenta nuestros baños de vapor natural que ayudan a desintoxicar el cuerpo y mejorar la circulación.</p>
             </div>
             
-            <div class="gallery-item">
-                <div class="gallery-icon">🏜️</div>
-                <h3 class="gallery-title">Desierto de Atacama</h3>
-                <p class="gallery-desc">Las dunas infinitas del desierto más árido del mundo, bajo un cielo estrellado incomparable.</p>
+            <div class="service-item">
+                <div class="service-icon">💆</div>
+                <h3 class="service-title">Masajes Terapéuticos</h3>
+                <p class="service-desc">Nuestros terapeutas certificados ofrecen masajes que combinan técnicas tradicionales con los beneficios de las aguas termales.</p>
             </div>
             
-            <div class="gallery-item">
-                <div class="gallery-icon">🌲</div>
-                <h3 class="gallery-title">Bosque de Secuoyas</h3>
-                <p class="gallery-desc">Majestuosos árboles que se elevan hacia el cielo, creando un dosel natural de impresionante belleza.</p>
+            <div class="service-item">
+                <div class="service-icon">🚶</div>
+                <h3 class="service-title">Senderismo</h3>
+                <p class="service-desc">Explora nuestros senderos naturales que te llevan a través de paisajes espectaculares y miradores únicos.</p>
             </div>
             
-            <div class="gallery-item">
-                <div class="gallery-icon">🌌</div>
-                <h3 class="gallery-title">Aurora Boreal</h3>
-                <p class="gallery-desc">El espectáculo de luces naturales más impresionante del planeta, bailando en el cielo ártico.</p>
+            <div class="service-item">
+                <div class="service-icon">🏕️</div>
+                <h3 class="service-title">Zona de Camping</h3>
+                <p class="service-desc">Vive la experiencia completa con nuestra zona de camping equipada, perfecta para conectarte con la naturaleza.</p>
             </div>
             
-            <div class="gallery-item">
-                <div class="gallery-icon">🌊</div>
-                <h3 class="gallery-title">Cataratas del Iguazú</h3>
-                <p class="gallery-desc">Una de las cascadas más grandes del mundo, donde el poder del agua crea un espectáculo inolvidable.</p>
+            <div class="service-item">
+                <div class="service-icon">🍽️</div>
+                <h3 class="service-title">Gastronomía Local</h3>
+                <p class="service-desc">Disfruta de nuestra comida preparada con ingredientes locales y orgánicos, complementando tu experiencia de bienestar.</p>
             </div>
         </div>
     </div>
     
     <footer>
-        <p>© 2023 Vistas Panorámicas - Galería Conceptual - Todos los derechos reservados</p>
+        <p>© 2023 Termales de Santa Rosa - Todos los derechos reservados</p>
     </footer>
 </body>
 </html>
