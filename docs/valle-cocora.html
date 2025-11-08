@@ -179,35 +179,7 @@
                 <div id="map" style="height: 400px; border-radius: 15px; margin-top: 2rem;"></div>
             </div>
 
-            <!-- Galería Deslizante -->
-            <div class="gallery-section">
-                <h2><i class="fas fa-images" style="color: #F1C40F;"></i> Paisajes del Valle</h2>
-                <div class="gallery-slider">
-                    <div class="gallery-track">
-                        <div class="gallery-slide">
-                            <img src="https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Palmas de cera en el valle">
-                        </div>
-                        <div class="gallery-slide">
-                            <img src="https://images.unsplash.com/photo-1578645521168-e4dc75a6fde5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Paisaje montañoso del Cocora">
-                        </div>
-                        <div class="gallery-slide">
-                            <img src="https://images.unsplash.com/photo-1578645518656-00b43d1bd296?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Senderos del valle">
-                        </div>
-                        <div class="gallery-slide">
-                            <img src="https://images.unsplash.com/photo-1578645518470-06ef6b1c6de0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Amanecer en el Valle del Cocora">
-                        </div>
-                    </div>
-                    <button class="gallery-prev"><i class="fas fa-chevron-left"></i></button>
-                    <button class="gallery-next"><i class="fas fa-chevron-right"></i></button>
-                </div>
-                <div class="gallery-indicators">
-                    <span class="indicator active"></span>
-                    <span class="indicator"></span>
-                    <span class="indicator"></span>
-                    <span class="indicator"></span>
-                </div>
-            </div>
-
+         
             <!-- Checklist de Preparación -->
             <div class="info-card checklist-card">
                 <h2><i class="fas fa-clipboard-check" style="color: #1ABC9C;"></i> Prepárate para tu Visita</h2>
@@ -293,72 +265,6 @@
                 </div>
             `)
             .openPopup();
-
-        // Galería Deslizante
-        document.addEventListener('DOMContentLoaded', function() {
-            const track = document.querySelector('.gallery-track');
-            const slides = document.querySelectorAll('.gallery-slide');
-            const prevBtn = document.querySelector('.gallery-prev');
-            const nextBtn = document.querySelector('.gallery-next');
-            const indicators = document.querySelectorAll('.indicator');
-            let currentIndex = 0;
-            let autoSlideInterval;
-
-            function updateGallery() {
-                track.style.transform = `translateX(-${currentIndex * 100}%)`;
-                indicators.forEach((indicator, index) => {
-                    indicator.classList.toggle('active', index === currentIndex);
-                });
-            }
-
-            function nextSlide() {
-                currentIndex = (currentIndex + 1) % slides.length;
-                updateGallery();
-            }
-
-            function prevSlide() {
-                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-                updateGallery();
-            }
-
-            nextBtn.addEventListener('click', function() {
-                nextSlide();
-                resetAutoSlide();
-            });
-
-            prevBtn.addEventListener('click', function() {
-                prevSlide();
-                resetAutoSlide();
-            });
-
-            indicators.forEach((indicator, index) => {
-                indicator.addEventListener('click', function() {
-                    currentIndex = index;
-                    updateGallery();
-                    resetAutoSlide();
-                });
-            });
-
-            function startAutoSlide() {
-                autoSlideInterval = setInterval(nextSlide, 5000);
-            }
-
-            function resetAutoSlide() {
-                clearInterval(autoSlideInterval);
-                startAutoSlide();
-            }
-
-            startAutoSlide();
-
-            const gallery = document.querySelector('.gallery-slider');
-            gallery.addEventListener('mouseenter', () => {
-                clearInterval(autoSlideInterval);
-            });
-
-            gallery.addEventListener('mouseleave', () => {
-                startAutoSlide();
-            });
-        });
 
         // Menú móvil
         document.addEventListener('DOMContentLoaded', function() {
