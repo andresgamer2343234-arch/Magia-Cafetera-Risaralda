@@ -3,552 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Termales de Santa Rosa - Magia Cafetera</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <nav class="navbar">
-            <div class="nav-container">
-                <h1 class="logo"><i class="fas fa-mountain"></i> Magia Cafetera</h1>
-                <div class="nav-toggle" id="navToggle">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                    <li class="dropdown">
-                        <a href="#"><i class="fas fa-map-marker-alt"></i> Lugares <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="termales-santa-rosa.html">Termales de Santa Rosa</a></li>
-                            <li><a href="valle-cocora.html">Valle del Cocora</a></li>
-                            <li><a href="bioparque-ukumari.html">Bioparque Ukumarí</a></li>
-                            <li><a href="plaza-bolivar.html">Plaza de Bolívar</a></li>
-                            <li><a href="cascada-santa-clara.html">Cascada Santa Clara</a></li>
-                            <li><a href="mirador-pereira.html">Mirador de Pereira</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="index.html#rutas"><i class="fas fa-route"></i> Rutas</a></li>
-                    <li><a href="index.html#contacto"><i class="fas fa-phone"></i> Contacto</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section de la Subpágina -->
-    <section class="subpage-hero" style="background: linear-gradient(rgba(39, 174, 96, 0.7), rgba(52, 152, 219, 0.7)), url('https://images.unsplash.com/photo-1599423300746-b7cf4a7a7de0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Termales de Santa Rosa</h1>
-                <p>Relájate en aguas volcánicas medicinales rodeado de naturaleza</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Información Principal -->
-    <section class="subpage-content">
-        <div class="container">
-            <div class="info-grid">
-                <!-- Tarjeta de Información Básica -->
-                <div class="info-card basic-info">
-                    <h2><i class="fas fa-info-circle" style="color: #27AE60;"></i> Información Práctica</h2>
-                    <div class="bullet-list">
-                        <div class="bullet-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <strong>Ubicación:</strong>
-                                <span>Santa Rosa de Cabal, Risaralda</span>
-                            </div>
-                        </div>
-                        <div class="bullet-item">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <strong>Horario:</strong>
-                                <span>8:00 AM - 6:00 PM (Todos los días)</span>
-                            </div>
-                        </div>
-                        <div class="bullet-item">
-                            <i class="fas fa-thermometer-half"></i>
-                            <div>
-                                <strong>Temperatura:</strong>
-                                <span>28°C - 40°C en diferentes piscinas</span>
-                            </div>
-                        </div>
-                        <div class="bullet-item">
-                            <i class="fas fa-users"></i>
-                            <div>
-                                <strong>Ideal para:</strong>
-                                <span>Familias, parejas, relax terapéutico</span>
-                            </div>
-                        </div>
-                        <div class="bullet-item">
-                            <i class="fas fa-hourglass-half"></i>
-                            <div>
-                                <strong>Duración recomendada:</strong>
-                                <span>3-4 horas para experiencia completa</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tarjeta de Precios -->
-                <div class="info-card pricing-card">
-                    <h2><i class="fas fa-tags" style="color: #E67E22;"></i> Precios y Paquetes</h2>
-                    <div class="pricing-tables">
-                        <div class="pricing-table">
-                            <h3>Entrada Básica</h3>
-                            <div class="price-amount">$35.000</div>
-                            <p class="price-note">Por persona</p>
-                            <div class="included-list">
-                                <ul>
-                                    <li>Acceso a todas las piscinas termales</li>
-                                    <li>Zonas de descanso con hamacas</li>
-                                    <li>Vestier y duchas disponibles</li>
-                                    <li>Lockers de seguridad incluidos</li>
-                                    <li>Áreas verdes para picnic</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="pricing-table featured">
-                            <h3>Experiencia Premium</h3>
-                            <div class="price-amount">$65.000</div>
-                            <p class="price-note">Por persona</p>
-                            <div class="included-list">
-                                <ul>
-                                    <li>Todo lo de entrada básica +</li>
-                                    <li>Masaje relajante de 30 minutos</li>
-                                    <li>Almuerzo típico de la región</li>
-                                    <li>Tour guiado por senderos</li>
-                                    <li>Tratamiento con barro volcánico</li>
-                                    <li>Toalla y bata incluida</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Beneficios y Características -->
-            <div class="info-card full-width benefits-card">
-                <h2><i class="fas fa-spa" style="color: #3498DB;"></i> Beneficios de las Aguas Termales</h2>
-                <div class="benefits-grid">
-                    <div class="benefit-item">
-                        <i class="fas fa-heart" style="color: #E74C3C;"></i>
-                        <h4>Salud Cardiovascular</h4>
-                        <p>Mejora la circulación sanguínea y regula la presión arterial</p>
-                    </div>
-                    <div class="benefit-item">
-                        <i class="fas fa-brain" style="color: #9B59B6;"></i>
-                        <h4>Relajación Mental</h4>
-                        <p>Reduce el estrés y promueve un sueño reparador</p>
-                    </div>
-                    <div class="benefit-item">
-                        <i class="fas fa-bone" style="color: #F39C12;"></i>
-                        <h4>Alivio Muscular</h4>
-                        <p>Alivia dolores articulares y tensiones musculares</p>
-                    </div>
-                    <div class="benefit-item">
-                        <i class="fas fa-lungs" style="color: #27AE60;"></i>
-                        <h4>Respiración</h4>
-                        <p>Vapores naturales ayudan con problemas respiratorios</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mapa Interactivo -->
-            <div class="map-section">
-                <h2><i class="fas fa-map-marked-alt" style="color: #9B59B6;"></i> ¿Cómo Llegar?</h2>
-                <div class="directions">
-                    <div class="transport-options">
-                        <div class="transport-card">
-                            <i class="fas fa-car" style="color: #E74C3C;"></i>
-                            <h4>En Carro Particular</h4>
-                            <p><strong>45 minutos</strong> desde Pereira<br>Vía Santa Rosa de Cabal</p>
-                        </div>
-                        <div class="transport-card">
-                            <i class="fas fa-bus" style="color: #F39C12;"></i>
-                            <h4>Transporte Público</h4>
-                            <p><strong>Bus</strong> desde Terminal de Pereira<br>Frecuencia: cada 30 minutos</p>
-                        </div>
-                        <div class="transport-card">
-                            <i class="fas fa-taxi" style="color: #27AE60;"></i>
-                            <h4>Servicio de Taxi</h4>
-                            <p><strong>$45.000</strong> aprox. desde Pereira<br>Servicio puerta a puerta</p>
-                        </div>
-                    </div>
-                </div>
-                <div id="map" style="height: 400px; border-radius: 15px; margin-top: 2rem;"></div>
-            </div>
-            <!-- Checklist de Preparación -->
-            <div class="info-card checklist-card">
-                <h2><i class="fas fa-clipboard-check" style="color: #1ABC9C;"></i> Prepárate para tu Visita</h2>
-                <div class="checklist-grid">
-                    <div class="checklist-column">
-                        <h4>✅ Qué Llevar</h4>
-                        <ul>
-                            <li>Traje de baño y sandalias</li>
-                            <li>Protector solar y gorra</li>
-                            <li>Toalla (si no lleva paquete premium)</li>
-                            <li>Ropa cómoda para cambiar</li>
-                            <li>Agua para hidratación</li>
-                        </ul>
-                    </div>
-                    <div class="checklist-column">
-                        <h4>📝 Recomendaciones</h4>
-                        <ul>
-                            <li>Llegar temprano para evitar multitudes</li>
-                            <li>No sumergirse inmediatamente después de comer</li>
-                            <li>Hidratarse constantemente</li>
-                            <li>Respetar tiempos en cada piscina (15-20 min)</li>
-                            <li>Supervisar constantemente a los niños</li>
-                        </ul>
-                    </div>
-                    <div class="checklist-column">
-                        <h4>⏰ Horarios Ideales</h4>
-                        <ul>
-                            <li><strong>Mañana:</strong> 8:00 AM - 11:00 AM</li>
-                            <li><strong>Tarde:</strong> 2:00 PM - 5:00 PM</li>
-                            <li><strong>Evitar:</strong> 12:00 PM - 2:00 PM</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3><i class="fas fa-mountain"></i> Magia Cafetera</h3>
-                    <p>Descubre la belleza y cultura del corazón cafetero colombiano.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Enlaces Rápidos</h4>
-                    <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="index.html#rutas">Rutas</a></li>
-                        <li><a href="index.html#lugares">Lugares</a></li>
-                        <li><a href="index.html#contacto">Contacto</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contacto</h4>
-                    <p><i class="fas fa-phone"></i> +57 321 293 2150</p>
-                    <p><i class="fas fa-envelope"></i> info@magiacafetera.com</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Magia Cafetera Risaralda. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script>
-        // Mapa Interactivo
-        var map = L.map('map').setView([4.869, -75.621], 15);
-        
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(map);
-        
-        var termalesMarker = L.marker([4.869, -75.621]).addTo(map)
-            .bindPopup(`
-                <div style="text-align: center;">
-                    <h3 style="margin: 0 0 10px 0; color: #27AE60;">Termales de Santa Rosa</h3>
-                    <p style="margin: 0;"><strong>Santa Rosa de Cabal, Risaralda</strong></p>
-                    <p style="margin: 5px 0;">Aguas medicinales volcánicas</p>
-                    <p style="margin: 0;"><em>Hoario: 8:00 AM - 6:00 PM</em></p>
-                </div>
-            `)
-            .openPopup();
-                // Actualizar indicadores
-                indicators.forEach((indicator, index) => {
-                    indicator.classList.toggle('active', index === currentIndex);
-                });
-            }
-
-            function nextSlide() {
-                currentIndex = (currentIndex + 1) % slides.length;
-                updateGallery();
-            }
-
-            function prevSlide() {
-                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-                updateGallery();
-            }
-
-            nextBtn.addEventListener('click', function() {
-                nextSlide();
-                resetAutoSlide();
-            });
-
-            prevBtn.addEventListener('click', function() {
-                prevSlide();
-                resetAutoSlide();
-            });
-
-            // Click en indicadores
-            indicators.forEach((indicator, index) => {
-                indicator.addEventListener('click', function() {
-                    currentIndex = index;
-                    updateGallery();
-                    resetAutoSlide();
-                });
-            });
-
-            function startAutoSlide() {
-                autoSlideInterval = setInterval(nextSlide, 5000);
-            }
-
-            function resetAutoSlide() {
-                clearInterval(autoSlideInterval);
-                startAutoSlide();
-            }
-
-            // Iniciar deslizamiento automático
-            startAutoSlide();
-
-            // Pausar al hacer hover
-            const gallery = document.querySelector('.gallery-slider');
-            gallery.addEventListener('mouseenter', () => {
-                clearInterval(autoSlideInterval);
-            });
-
-            gallery.addEventListener('mouseleave', () => {
-                startAutoSlide();
-            });
-        });
-
-        // JavaScript para menú móvil
-        document.addEventListener('DOMContentLoaded', function() {
-            const navToggle = document.getElementById('navToggle');
-            const navMenu = document.getElementById('navMenu');
-            const dropdowns = document.querySelectorAll('.dropdown');
-            
-            navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                navToggle.classList.toggle('active');
-            });
-
-            dropdowns.forEach(dropdown => {
-                dropdown.addEventListener('click', function(e) {
-                    if (window.innerWidth <= 768) {
-                        this.classList.toggle('active');
-                    }
-                });
-            });
-        });
-    </script>
-
+    <title>Vistas Panorámicas</title>
     <style>
-        /* Estilos adicionales para la subpágina */
-        .full-width {
-            grid-column: 1 / -1;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
-        .bullet-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: #fff;
+            min-height: 100vh;
+            padding-bottom: 50px;
         }
-
-        .bullet-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem;
-            background: var(--gris-claro);
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .bullet-item:hover {
-            transform: translateX(5px);
-        }
-
-        .bullet-item i {
-            font-size: 1.2rem;
-            color: var(--verde-medio);
-            width: 30px;
+        
+        header {
             text-align: center;
+            padding: 60px 20px;
+            background-color: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-
-        .bullet-item strong {
-            color: var(--verde-oscuro);
-            display: block;
-            margin-bottom: 0.2rem;
+        
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            letter-spacing: 3px;
+            font-weight: 300;
         }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+        
+        .subtitle {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-weight: 300;
+            opacity: 0.9;
         }
-
-        .benefit-item {
+        
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .intro {
             text-align: center;
-            padding: 2rem 1rem;
-            background: linear-gradient(135deg, var(--gris-claro), #f8f9fa);
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
             border-radius: 15px;
-            transition: transform 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
-
-        .benefit-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .benefit-item i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .benefit-item h4 {
-            color: var(--verde-oscuro);
-            margin-bottom: 1rem;
-        }
-
-        .benefit-item p {
-            color: var(--gris);
-            line-height: 1.5;
-        }
-
-        .checklist-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .checklist-column h4 {
-            color: var(--verde-oscuro);
-            margin-bottom: 1rem;
+        
+        .intro p {
+            line-height: 1.7;
+            margin-bottom: 20px;
             font-size: 1.1rem;
         }
-
-        .checklist-column ul {
-            list-style: none;
-        }
-
-        .checklist-column li {
-            padding: 0.7rem 0;
-            border-bottom: 1px solid var(--gris-claro);
-            color: var(--gris);
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .checklist-column li:last-child {
-            border-bottom: none;
-        }
-
-        .checklist-column li::before {
-            content: '•';
-            color: var(--verde-medio);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        .included-list ul {
-            list-style: none;
-            margin-top: 1rem;
-        }
-
-        .included-list li {
-            padding: 0.5rem 0;
-            color: var(--gris);
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .included-list li::before {
-            content: '✓';
-            color: var(--verde-medio);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        .directions {
-            margin-bottom: 2rem;
-        }
-
-        .transport-options {
+        
+        .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
         }
-
-        .transport-card {
-            background: var(--gris-claro);
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .transport-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .transport-card i {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .transport-card h4 {
-            color: var(--verde-oscuro);
-            margin-bottom: 0.5rem;
-        }
-
-        .transport-card p {
-            color: var(--gris);
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-
-        .gallery-indicators {
+        
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            height: 300px;
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            gap: 0.5rem;
-            margin-top: 1rem;
+            align-items: center;
+            padding: 30px;
+            text-align: center;
+            position: relative;
         }
-
-        .indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--gris-claro);
-            cursor: pointer;
-            transition: background 0.3s ease;
+        
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
         }
-
-        .indicator.active {
-            background: var(--verde-medio);
+        
+        .gallery-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            opacity: 0.8;
         }
-
+        
+        .gallery-title {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: #fff;
+            font-weight: 400;
+        }
+        
+        .gallery-desc {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+        
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 60px 0;
+            gap: 20px;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 25px;
+            max-width: 250px;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .feature-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .feature-desc {
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 70px;
+            padding: 30px;
+            background-color: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+        }
+        
         @media (max-width: 768px) {
-            .benefits-grid {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .gallery-item {
+                height: 280px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .gallery {
                 grid-template-columns: 1fr;
             }
             
-            .checklist-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .transport-options {
-                grid-template-columns: 1fr;
+            .gallery-item {
+                height: 250px;
             }
         }
     </style>
+</head>
+<body>
+    <header>
+        <h1>Vistas Panorámicas</h1>
+        <p class="subtitle">Descubre los paisajes más impresionantes del mundo desde una perspectiva única</p>
+    </header>
+    
+    <div class="container">
+        <section class="intro">
+            <p>Las vistas panorámicas nos ofrecen una perspectiva única de nuestro planeta, permitiéndonos apreciar la inmensidad y belleza de la naturaleza. Desde majestuosas montañas hasta extensos océanos, estos paisajes capturan momentos de asombrosa belleza.</p>
+            <p>Explora nuestra galería conceptual y déjate inspirar por estos increíbles paisajes que nos recuerdan la importancia de preservar y admirar nuestro entorno natural.</p>
+        </section>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🌄</div>
+                <h3 class="feature-title">Amaneceres</h3>
+                <p class="feature-desc">Los primeros rayos del sol iluminando paisajes imponentes</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🏔️</div>
+                <h3 class="feature-title">Montañas</h3>
+                <p class="feature-desc">Cumbres que desafían las nubes y ofrecen vistas infinitas</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🌊</div>
+                <h3 class="feature-title">Océanos</h3>
+                <p class="feature-desc">Horizontes donde el cielo y el agua se encuentran</p>
+            </div>
+        </div>
+        
+        <div class="gallery">
+            <div class="gallery-item">
+                <div class="gallery-icon">⛰️</div>
+                <h3 class="gallery-title">Cordillera de los Alpes</h3>
+                <p class="gallery-desc">Impresionante vista de las montañas nevadas al amanecer, con colores que se reflejan en los lagos cristalinos.</p>
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-icon">🌅</div>
+                <h3 class="gallery-title">Costa del Pacífico</h3>
+                <p class="gallery-desc">Atardecer sobre el océano, donde el cielo y el mar se funden en una paleta de colores vibrantes.</p>
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-icon">🏜️</div>
+                <h3 class="gallery-title">Desierto de Atacama</h3>
+                <p class="gallery-desc">Las dunas infinitas del desierto más árido del mundo, bajo un cielo estrellado incomparable.</p>
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-icon">🌲</div>
+                <h3 class="gallery-title">Bosque de Secuoyas</h3>
+                <p class="gallery-desc">Majestuosos árboles que se elevan hacia el cielo, creando un dosel natural de impresionante belleza.</p>
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-icon">🌌</div>
+                <h3 class="gallery-title">Aurora Boreal</h3>
+                <p class="gallery-desc">El espectáculo de luces naturales más impresionante del planeta, bailando en el cielo ártico.</p>
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-icon">🌊</div>
+                <h3 class="gallery-title">Cataratas del Iguazú</h3>
+                <p class="gallery-desc">Una de las cascadas más grandes del mundo, donde el poder del agua crea un espectáculo inolvidable.</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2023 Vistas Panorámicas - Galería Conceptual - Todos los derechos reservados</p>
+    </footer>
 </body>
 </html>
