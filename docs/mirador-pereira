@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirador de Pereira - Magia Cafetera</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo"><i class="fas fa-mountain"></i> Magia Cafetera</h1>
+                <div class="nav-toggle" id="navToggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-map-marker-alt"></i> Lugares <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="termales-santa-rosa.html">Termales de Santa Rosa</a></li>
+                            <li><a href="valle-cocora.html">Valle del Cocora</a></li>
+                            <li><a href="bioparque-ukumari.html">Bioparque Ukumarí</a></li>
+                            <li><a href="plaza-bolivar.html">Plaza de Bolívar</a></li>
+                            <li><a href="cascada-santa-clara.html">Cascada Santa Clara</a></li>
+                            <li><a href="mirador-pereira.html">Mirador de Pereira</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#rutas"><i class="fas fa-route"></i> Rutas</a></li>
+                    <li><a href="index.html#contacto"><i class="fas fa-phone"></i> Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="subpage-hero" style="background: linear-gradient(rgba(26, 188, 156, 0.7), rgba(52, 152, 219, 0.7)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Mirador de Pereira</h1>
+                <p>Vista panorámica espectacular de la ciudad al atardecer</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="subpage-content">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card basic-info">
+                    <h2><i class="fas fa-info-circle" style="color: #27AE60;"></i> Información Práctica</h2>
+                    <div class="bullet-list">
+                        <div class="bullet-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Ubicación:</strong>
+                                <span>Cerro de la Cruz, Pereira</span>
+                            </div>
+                        </div>
+                        <div class="bullet-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Horario:</strong>
+                                <span>6:00 AM - 8:00 PM (Todos los días)</span>
+                            </div>
+                        </div>
+                        <div class="bullet-item">
+                            <i class="fas fa-mountain"></i>
+                            <div>
+                                <strong>Altura:</strong>
+                                <span>1.450 metros sobre el nivel del mar</span>
+                            </div>
+                        </div>
+                        <div class="bullet-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <strong>Ideal para:</strong>
+                                <span>Fotografía, parejas, atardeceres</span>
+                            </div>
+                        </div>
+                        <div class="bullet-item">
+                            <i class="fas fa-hourglass-half"></i>
+                            <div>
+                                <strong>Duración recomendada:</strong>
+                                <span>1-2 horas para disfrutar la vista</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card pricing-card">
+                    <h2><i class="fas fa-tags" style="color: #E67E22;"></i> Acceso y Experiencias</h2>
+                    <div class="pricing-tables">
+                        <div class="pricing-table">
+                            <h3>Visita Libre</h3>
+                            <div class="price-amount">Gratis</div>
+                            <p class="price-note">Acceso público</p>
+                            <div class="included-list">
+                                <ul>
+                                    <li>Acceso al mirador principal</li>
+                                    <li>Vista panorámica 360° de Pereira</li>
+                                    <li>Zonas de descanso y bancas</li>
+                                    <li>Fotografías del atardecer</li>
+                                    <li>Área de picnic familiar</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pricing-table featured">
+                            <h3>Tour Fotográfico</h3>
+                            <div class="price-amount">$30.000</div>
+                            <p class="price-note">Por persona</p>
+                            <div class="included-list">
+                                <ul>
+                                    <li>Todo lo de visita libre +</li>
+                                    <li>Fotógrafo profesional incluido</li>
+                                    <li>Sesión de fotos en golden hour</li>
+                                    <li>10 fotos editadas digitalmente</li>
+                                    <li>Tips de fotografía de paisaje</li>
+                                    <li>Snack y bebida incluidos</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beneficios y Características -->
+            <div class="info-card full-width benefits-card">
+                <h2><i class="fas fa-binoculars" style="color: #3498DB;"></i> Experiencias Únicas</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <i class="fas fa-sun" style="color: #F39C12;"></i>
+                        <h4>Amaneceres y Atardeceres</h4>
+                        <p>Disfruta de los amaneceres dorados y atardeceres espectaculares sobre la ciudad</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-city" style="color: #95A5A6;"></i>
+                        <h4>Vista 360° de Pereira</h4>
+                        <p>Observa toda la ciudad, el valle y las montañas circundantes desde este punto privilegiado</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-camera" style="color: #9B59B6;"></i>
+                        <h4>Fotografía Nocturna</h4>
+                        <p>Captura imágenes impresionantes de la ciudad iluminada por la noche</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-heart" style="color: #E74C3C;"></i>
+                        <h4>Momento Romántico</h4>
+                        <p>Lugar perfecto para parejas, propuestas matrimoniales y momentos especiales</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mapa Interactivo -->
+            <div class="map-section">
+                <h2><i class="fas fa-map-marked-alt" style="color: #9B59B6;"></i> ¿Cómo Llegar?</h2>
+                <div class="directions">
+                    <div class="transport-options">
+                        <div class="transport-card">
+                            <i class="fas fa-car" style="color: #E74C3C;"></i>
+                            <h4>En Carro Particular</h4>
+                            <p><strong>15 minutos</strong> desde centro<br>Vía cerro de la Cruz</p>
+                        </div>
+                        <div class="transport-card">
+                            <i class="fas fa-bus" style="color: #F39C12;"></i>
+                            <h4>Transporte Público</h4>
+                            <p><strong>Bus urbano</strong><br>Ruta: Centro - Cerro de la Cruz</p>
+                        </div>
+                        <div class="transport-card">
+                            <i class="fas fa-walking" style="color: #27AE60;"></i>
+                            <h4>Caminando</h4>
+                            <p><strong>30 minutos</strong> desde centro<br>Sendero peatonal señalizado</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="map" style="height: 400px; border-radius: 15px; margin-top: 2rem;"></div>
+            </div>
+
+            <!-- Galería Deslizante -->
+            <div class="gallery-section">
+                <h2><i class="fas fa-images" style="color: #F1C40F;"></i> Vistas Panorámicas</h2>
+                <div class="gallery-slider">
+                    <div class="gallery-track">
+                        <div class="gallery-slide">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Vista panorámica de Pereira">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://images.unsplash.com/photo-1464822759844-4c0a1e0d0256?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Atardecer desde el mirador">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Ciudad iluminada de noche">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://images.unsplash.com/photo-1464822759844-4c0a1e0d0256?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Panorámica de las montañas">
+                        </div>
+                    </div>
+                    <button class="gallery-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="gallery-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="gallery-indicators">
+                    <span class="indicator active"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                </div>
+            </div>
+
+            <!-- Checklist de Preparación -->
+            <div class="info-card checklist-card">
+                <h2><i class="fas fa-clipboard-check" style="color: #1ABC9C;"></i> Prepárate para tu Visita</h2>
+                <div class="checklist-grid">
+                    <div class="checklist-column">
+                        <h4>✅ Qué Llevar</h4>
+                        <ul>
+                            <li>Cámara o teléfono con buena cámara</li>
+                            <li>Abrigo (hace frío en la noche)</li>
+                            <li>Agua y snacks ligeros</li>
+                            <li>Dinero en efectivo</li>
+                            <li>Protector solar durante el día</li>
+                        </ul>
+                    </div>
+                    <div class="checklist-column">
+                        <h4>📝 Recomendaciones</h4>
+                        <ul>
+                            <li>Llegar 1 hora antes del atardecer</li>
+                            <li>Reservar tour fotográfico con anticipación</li>
+                            <li>Verificar condiciones climáticas</li>
+                            <li>Llevar tripode para fotos nocturnas</li>
+                            <li>Respetar el espacio de otros visitantes</li>
+                        </ul>
+                    </div>
+                    <div class="checklist-column">
+                        <h4>⏰ Horarios Ideales</h4>
+                        <ul>
+                            <li><strong>Amanecer:</strong> 5:30 AM - 6:30 AM</li>
+                            <li><strong>Atardecer:</strong> 5:30 PM - 6:30 PM</li>
+                            <li><strong>Noche:</strong> 7:00 PM - 8:00 PM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tips Fotográficos -->
+            <div class="info-card photography-card">
+                <h2><i class="fas fa-camera-retro" style="color: #E74C3C;"></i> Tips para Fotografías Espectaculares</h2>
+                <div class="photography-tips">
+                    <div class="tip-item">
+                        <i class="fas fa-sun"></i>
+                        <h4>Golden Hour</h4>
+                        <p>La hora dorada (primeras y últimas horas de luz) proporciona la mejor iluminación natural</p>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-moon"></i>
+                        <h4>Horas Azules</h4>
+                        <p>30 minutos después del atardecer para capturar la ciudad iluminada con cielo azul</p>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-cloud"></i>
+                        <h4>Días Nublados</h4>
+                        <p>Las nubes pueden crear efectos dramáticos y colores únicos en el cielo</p>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-tripod"></i>
+                        <h4>Equipo Recomendado</h4>
+                        <p>Trípode, lente gran angular y filtro polarizador para mejores resultados</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-mountain"></i> Magia Cafetera</h3>
+                    <p>Descubre la belleza y cultura del corazón cafetero colombiano.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#rutas">Rutas</a></li>
+                        <li><a href="index.html#lugares">Lugares</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> +57 321 293 2150</p>
+                    <p><i class="fas fa-envelope"></i> info@magiacafetera.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Magia Cafetera Risaralda. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // Mapa Interactivo
+        var map = L.map('map').setView([4.808, -75.721], 16);
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+        
+        L.marker([4.808, -75.721]).addTo(map)
+            .bindPopup(`
+                <div style="text-align: center;">
+                    <h3 style="margin: 0 0 10px 0; color: #27AE60;">Mirador de Pereira</h3>
+                    <p style="margin: 0;"><strong>Cerro de la Cruz, Pereira</strong></p>
+                    <p style="margin: 5px 0;">Vista panorámica 360° de la ciudad</p>
+                    <p style="margin: 0;"><em>Horario: 6:00 AM - 8:00 PM</em></p>
+                </div>
+            `)
+            .openPopup();
+
+        // Galería Deslizante
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.querySelector('.gallery-track');
+            const slides = document.querySelectorAll('.gallery-slide');
+            const prevBtn = document.querySelector('.gallery-prev');
+            const nextBtn = document.querySelector('.gallery-next');
+            const indicators = document.querySelectorAll('.indicator');
+            let currentIndex = 0;
+            let autoSlideInterval;
+
+            function updateGallery() {
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                indicators.forEach((indicator, index) => {
+                    indicator.classList.toggle('active', index === currentIndex);
+                });
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateGallery();
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateGallery();
+            }
+
+            nextBtn.addEventListener('click', function() {
+                nextSlide();
+                resetAutoSlide();
+            });
+
+            prevBtn.addEventListener('click', function() {
+                prevSlide();
+                resetAutoSlide();
+            });
+
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', function() {
+                    currentIndex = index;
+                    updateGallery();
+                    resetAutoSlide();
+                });
+            });
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 5000);
+            }
+
+            function resetAutoSlide() {
+                clearInterval(autoSlideInterval);
+                startAutoSlide();
+            }
+
+            startAutoSlide();
+
+            const gallery = document.querySelector('.gallery-slider');
+            gallery.addEventListener('mouseenter', () => {
+                clearInterval(autoSlideInterval);
+            });
+
+            gallery.addEventListener('mouseleave', () => {
+                startAutoSlide();
+            });
+        });
+
+        // Menú móvil
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        this.classList.toggle('active');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <style>
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .bullet-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .bullet-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--gris-claro);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .bullet-item:hover {
+            transform: translateX(5px);
+        }
+
+        .bullet-item i {
+            font-size: 1.2rem;
+            color: var(--verde-medio);
+            width: 30px;
+            text-align: center;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: linear-gradient(135deg, var(--gris-claro), #f8f9fa);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-item i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .checklist-column h4 {
+            color: var(--verde-oscuro);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .checklist-column ul {
+            list-style: none;
+        }
+
+        .checklist-column li {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid var(--gris-claro);
+            color: var(--gris);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .checklist-column li:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-column li::before {
+            content: '•';
+            color: var(--verde-medio);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .photography-tips {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tip-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #a29bfe, #74b9ff);
+            border-radius: 10px;
+            color: white;
+        }
+
+        .tip-item i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .tip-item h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .tip-item p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            opacity: 0.9;
+        }
+
+        .transport-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .gallery-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--gris-claro);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .indicator.active {
+            background: var(--verde-medio);
+        }
+
+        @media (max-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .checklist-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .photography-tips {
+                grid-template-columns: 1fr;
+            }
+            
+            .transport-options {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>
