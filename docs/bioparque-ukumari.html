@@ -3,490 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Termales de Santa Rosa - Magia Cafetera</title>
+    <title>Bioparque Ukumarí - Magia Cafetera</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <style>
-        :root {
-            --verde-oscuro: #2E7D32;
-            --verde-medio: #4CAF50;
-            --verde-claro: #C8E6C9;
-            --naranja: #FF9800;
-            --gris: #757575;
-            --gris-claro: #f5f5f5;
-            --blanco: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--gris-claro);
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* Header y Navegación */
-        .navbar {
-            background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-medio));
-            padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            color: var(--blanco);
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-
-        .logo i {
-            margin-right: 0.5rem;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-menu a {
-            color: var(--blanco);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .nav-menu a:hover {
-            color: var(--verde-claro);
-        }
-
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: var(--blanco);
-            min-width: 200px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-radius: 5px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            list-style: none;
-        }
-
-        .dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .dropdown-menu li {
-            border-bottom: 1px solid var(--gris-claro);
-        }
-
-        .dropdown-menu li:last-child {
-            border-bottom: none;
-        }
-
-        .dropdown-menu a {
-            color: #333;
-            padding: 0.8rem 1rem;
-            display: block;
-            transition: background 0.3s ease;
-        }
-
-        .dropdown-menu a:hover {
-            background: var(--verde-claro);
-            color: var(--verde-oscuro);
-        }
-
-        .nav-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .bar {
-            width: 25px;
-            height: 3px;
-            background: var(--blanco);
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-
-        /* Hero Section */
-        .subpage-hero {
-            background: linear-gradient(rgba(46, 125, 50, 0.7), rgba(76, 175, 80, 0.7)), url('https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
-            background-size: cover;
-            background-position: center;
-            color: var(--blanco);
-            padding: 6rem 0;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero-content p {
-            font-size: 1.3rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Contenido Principal */
-        .subpage-content {
-            padding: 4rem 0;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .info-card {
-            background: var(--blanco);
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .info-card h2 {
-            color: var(--verde-oscuro);
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .bullet-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .bullet-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem;
-            background: var(--gris-claro);
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .bullet-item:hover {
-            transform: translateX(5px);
-        }
-
-        .bullet-item i {
-            font-size: 1.2rem;
-            color: var(--verde-medio);
-            width: 30px;
-            text-align: center;
-        }
-
-        /* Precios */
-        .pricing-tables {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-
-        .pricing-table {
-            background: var(--gris-claro);
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .pricing-table:hover {
-            transform: translateY(-5px);
-        }
-
-        .pricing-table.featured {
-            background: linear-gradient(135deg, var(--verde-medio), var(--verde-oscuro));
-            color: var(--blanco);
-        }
-
-        .pricing-table h3 {
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .price-amount {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin: 1rem 0;
-        }
-
-        .price-note {
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-
-        .included-list ul {
-            list-style: none;
-            text-align: left;
-        }
-
-        .included-list li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .included-list li:last-child {
-            border-bottom: none;
-        }
-
-        .pricing-table:not(.featured) .included-list li {
-            border-color: rgba(0,0,0,0.1);
-        }
-
-        /* Beneficios */
-        .full-width {
-            grid-column: 1 / -1;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .benefit-item {
-            text-align: center;
-            padding: 2rem 1rem;
-            background: linear-gradient(135deg, var(--gris-claro), #f8f9fa);
-            border-radius: 15px;
-            transition: transform 0.3s ease;
-        }
-
-        .benefit-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .benefit-item i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Mapa y Transporte */
-        .map-section {
-            margin: 4rem 0;
-        }
-
-        .map-section h2 {
-            color: var(--verde-oscuro);
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .transport-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .transport-card {
-            background: var(--blanco);
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-
-        .transport-card i {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        #map {
-            height: 400px;
-            border-radius: 15px;
-            margin-top: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        /* Checklist */
-        .checklist-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .checklist-column h4 {
-            color: var(--verde-oscuro);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .checklist-column ul {
-            list-style: none;
-        }
-
-        .checklist-column li {
-            padding: 0.7rem 0;
-            border-bottom: 1px solid var(--gris-claro);
-            color: var(--gris);
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .checklist-column li:last-child {
-            border-bottom: none;
-        }
-
-        .checklist-column li::before {
-            content: '•';
-            color: var(--verde-medio);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        /* Footer */
-        footer {
-            background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-medio));
-            color: var(--blanco);
-            padding: 3rem 0 1rem;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3, .footer-section h4 {
-            margin-bottom: 1rem;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section a {
-            color: var(--blanco);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: var(--verde-claro);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-toggle {
-                display: flex;
-            }
-
-            .nav-menu {
-                position: fixed;
-                left: -100%;
-                top: 70px;
-                flex-direction: column;
-                background: var(--verde-oscuro);
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 10px 27px rgba(0,0,0,0.05);
-                padding: 2rem 0;
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .dropdown-menu {
-                position: static;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                box-shadow: none;
-                background: transparent;
-            }
-
-            .dropdown-menu a {
-                color: var(--blanco);
-                padding-left: 2rem;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .pricing-tables {
-                grid-template-columns: 1fr;
-            }
-
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .checklist-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .transport-options {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -518,11 +38,11 @@
         </nav>
     </header>
 
-    <section class="subpage-hero">
+    <section class="subpage-hero" style="background: linear-gradient(rgba(241, 196, 15, 0.7), rgba(46, 125, 50, 0.7)), url('https://images.unsplash.com/photo-1550358864-518f202c02ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');">
         <div class="container">
             <div class="hero-content">
-                <h1>Termales de Santa Rosa</h1>
-                <p>Relájate y rejuvenece en aguas termales naturales</p>
+                <h1>Bioparque Ukumarí</h1>
+                <p>Santuario de vida silvestre y conservación en Pereira</p>
             </div>
         </div>
     </section>
@@ -537,35 +57,35 @@
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
                                 <strong>Ubicación:</strong>
-                                <span>Santa Rosa de Cabal, Risaralda</span>
+                                <span>Pereira, Risaralda</span>
                             </div>
                         </div>
                         <div class="bullet-item">
                             <i class="fas fa-clock"></i>
                             <div>
                                 <strong>Horario:</strong>
-                                <span>8:00 AM - 6:00 PM (Todos los días)</span>
+                                <span>9:00 AM - 5:00 PM (Martes a Domingo)</span>
                             </div>
                         </div>
                         <div class="bullet-item">
-                            <i class="fas fa-thermometer-half"></i>
+                            <i class="fas fa-paw"></i>
                             <div>
-                                <strong>Temperatura:</strong>
-                                <span>18°C - 22°C (Ambiente)</span>
+                                <strong>Especies:</strong>
+                                <span>120+ especies de fauna colombiana</span>
                             </div>
                         </div>
                         <div class="bullet-item">
                             <i class="fas fa-users"></i>
                             <div>
                                 <strong>Ideal para:</strong>
-                                <span>Familias, parejas, relajación</span>
+                                <span>Familias, educación, amantes de animales</span>
                             </div>
                         </div>
                         <div class="bullet-item">
                             <i class="fas fa-hourglass-half"></i>
                             <div>
                                 <strong>Duración recomendada:</strong>
-                                <span>4-6 horas para experiencia completa</span>
+                                <span>3-4 horas para recorrido completo</span>
                             </div>
                         </div>
                     </div>
@@ -576,30 +96,30 @@
                     <div class="pricing-tables">
                         <div class="pricing-table">
                             <h3>Entrada General</h3>
-                            <div class="price-amount">$35.000</div>
+                            <div class="price-amount">$25.000</div>
                             <p class="price-note">Adultos</p>
                             <div class="included-list">
                                 <ul>
-                                    <li>Acceso a piscinas termales</li>
-                                    <li>Zonas de descanso</li>
-                                    <li>Duchas y vestieres</li>
-                                    <li>Área de picnic</li>
-                                    <li>Estacionamiento</li>
+                                    <li>Acceso a todas las exhibiciones</li>
+                                    <li>Recorrido por hábitats naturales</li>
+                                    <li>Zonas de descanso y alimentación</li>
+                                    <li>Área de juegos infantiles</li>
+                                    <li>Estacionamiento gratuito</li>
                                 </ul>
                             </div>
                         </div>
                         <div class="pricing-table featured">
-                            <h3>Plan Completo</h3>
-                            <div class="price-amount">$60.000</div>
+                            <h3>Tour Guiado</h3>
+                            <div class="price-amount">$40.000</div>
                             <p class="price-note">Por persona</p>
                             <div class="included-list">
                                 <ul>
                                     <li>Todo lo de entrada general +</li>
-                                    <li>Masaje relajante (30 min)</li>
-                                    <li>Almuerzo típico incluido</li>
-                                    <li>Barro terapéutico</li>
-                                    <li>Acceso a cascadas naturales</li>
-                                    <li>Tour guiado por senderos</li>
+                                    <li>Guía especializado en fauna</li>
+                                    <li>Alimentación de animales incluida</li>
+                                    <li>Acceso a áreas exclusivas</li>
+                                    <li>Fotos con animales permitidas</li>
+                                    <li>Charla educativa incluida</li>
                                 </ul>
                             </div>
                         </div>
@@ -609,27 +129,27 @@
 
             <!-- Beneficios y Características -->
             <div class="info-card full-width benefits-card">
-                <h2><i class="fas fa-spa" style="color: #27AE60;"></i> Experiencias Únicas</h2>
+                <h2><i class="fas fa-seedling" style="color: #27AE60;"></i> Experiencias Únicas</h2>
                 <div class="benefits-grid">
                     <div class="benefit-item">
-                        <i class="fas fa-hot-tub" style="color: #F39C12;"></i>
-                        <h4>Aguas Termales</h4>
-                        <p>Disfruta de piscinas naturales con aguas ricas en minerales a diferentes temperaturas</p>
+                        <i class="fas fa-lion" style="color: #F39C12;"></i>
+                        <h4>Fauna Colombiana</h4>
+                        <p>Observa jaguares, osos andinos, cóndores y más especies nativas en hábitats naturales</p>
                     </div>
                     <div class="benefit-item">
-                        <i class="fas fa-water" style="color: #3498DB;"></i>
-                        <h4>Cascadas Naturales</h4>
-                        <p>Experimenta cascadas de agua termal que masajean y revitalizan tu cuerpo</p>
-                    </div>
-                    <div class="benefit-item">
-                        <i class="fas fa-hands" style="color: #9B59B6;"></i>
-                        <h4>Barro Terapéutico</h4>
-                        <p>Aplica barro natural con propiedades rejuvenecedoras para la piel</p>
-                    </div>
-                    <div class="benefit-item">
-                        <i class="fas fa-hiking" style="color: #E74C3C;"></i>
+                        <i class="fas fa-hiking" style="color: #3498DB;"></i>
                         <h4>Senderos Ecológicos</h4>
-                        <p>Recorre caminos entre bosque nublado con vistas espectaculares</p>
+                        <p>Recorre 4.5 km de senderos through bosques andinos y paisajes únicos</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-graduation-cap" style="color: #9B59B6;"></i>
+                        <h4>Educación Ambiental</h4>
+                        <p>Programas educativos para todas las edades sobre conservación</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-camera" style="color: #E74C3C;"></i>
+                        <h4>Fotografía</h4>
+                        <p>Oportunidades únicas para fotografiar fauna en ambientes controlados</p>
                     </div>
                 </div>
             </div>
@@ -642,17 +162,17 @@
                         <div class="transport-card">
                             <i class="fas fa-car" style="color: #E74C3C;"></i>
                             <h4>En Carro Particular</h4>
-                            <p><strong>45 minutos</strong> desde Pereira<br>Vía Santa Rosa de Cabal</p>
+                            <p><strong>15 minutos</strong> desde centro de Pereira<br>Vía Cerritos</p>
                         </div>
                         <div class="transport-card">
                             <i class="fas fa-bus" style="color: #F39C12;"></i>
                             <h4>Transporte Público</h4>
-                            <p><strong>Bus</strong> desde Terminal de Pereira<br>Ruta: Santa Rosa de Cabal</p>
+                            <p><strong>Bus</strong> desde Terminal de Pereira<br>Ruta: Universidad Tecnológica</p>
                         </div>
                         <div class="transport-card">
                             <i class="fas fa-taxi" style="color: #27AE60;"></i>
                             <h4>Servicio de Taxi</h4>
-                            <p><strong>$35.000</strong> aprox. desde Pereira<br>Servicio puerta a puerta</p>
+                            <p><strong>$12.000</strong> aprox. desde centro<br>Servicio puerta a puerta</p>
                         </div>
                     </div>
                 </div>
@@ -666,29 +186,29 @@
                     <div class="checklist-column">
                         <h4>✅ Qué Llevar</h4>
                         <ul>
-                            <li>Traje de baño y chanclas</li>
-                            <li>Toalla y muda de ropa extra</li>
+                            <li>Ropa cómoda y zapatos para caminar</li>
                             <li>Protector solar y gorra</li>
                             <li>Agua para hidratación</li>
-                            <li>Dinero en efectivo</li>
+                            <li>Cámara fotográfica</li>
+                            <li>Binoculares (opcional)</li>
                         </ul>
                     </div>
                     <div class="checklist-column">
                         <h4>📝 Recomendaciones</h4>
                         <ul>
-                            <li>No nadar inmediatamente después de comer</li>
-                            <li>Hidratarse constantemente</li>
-                            <li>Respetar tiempos en aguas termales</li>
-                            <li>No usar joyas en las piscinas</li>
-                            <li>Secarse bien al salir del agua</li>
+                            <li>Llegar temprano para ver animales activos</li>
+                            <li>Respetar las normas del parque</li>
+                            <li>No alimentar a los animales</li>
+                            <li>Mantener silencio en áreas de observación</li>
+                            <li>Seguir los senderos marcados</li>
                         </ul>
                     </div>
                     <div class="checklist-column">
                         <h4>⏰ Horarios Ideales</h4>
                         <ul>
-                            <li><strong>Mañana:</strong> 8:00 AM - 11:00 AM</li>
-                            <li><strong>Tarde:</strong> 2:00 PM - 5:00 PM</li>
-                            <li><strong>Evitar:</strong> Horas de mayor afluencia</li>
+                            <li><strong>Mañana:</strong> 9:00 AM - 12:00 PM</li>
+                            <li><strong>Tarde:</strong> 2:00 PM - 4:00 PM</li>
+                            <li><strong>Evitar:</strong> Horas de mucho calor</li>
                         </ul>
                     </div>
                 </div>
@@ -728,19 +248,19 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
         // Mapa Interactivo
-        var map = L.map('map').setView([4.869, -75.621], 13);
+        var map = L.map('map').setView([4.805, -75.696], 15);
         
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
         
-        L.marker([4.869, -75.621]).addTo(map)
+        L.marker([4.805, -75.696]).addTo(map)
             .bindPopup(`
                 <div style="text-align: center;">
-                    <h3 style="margin: 0 0 10px 0; color: #27AE60;">Termales de Santa Rosa</h3>
-                    <p style="margin: 0;"><strong>Santa Rosa de Cabal, Risaralda</strong></p>
-                    <p style="margin: 5px 0;">Aguas termales naturales</p>
-                    <p style="margin: 0;"><em>Horario: 8:00 AM - 6:00 PM</em></p>
+                    <h3 style="margin: 0 0 10px 0; color: #27AE60;">Bioparque Ukumarí</h3>
+                    <p style="margin: 0;"><strong>Pereira, Risaralda</strong></p>
+                    <p style="margin: 5px 0;">Santuario de vida silvestre</p>
+                    <p style="margin: 0;"><em>Horario: 9:00 AM - 5:00 PM</em></p>
                 </div>
             `)
             .openPopup();
@@ -765,5 +285,140 @@
             });
         });
     </script>
+
+    <style>
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .bullet-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .bullet-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--gris-claro);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .bullet-item:hover {
+            transform: translateX(5px);
+        }
+
+        .bullet-item i {
+            font-size: 1.2rem;
+            color: var(--verde-medio);
+            width: 30px;
+            text-align: center;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: linear-gradient(135deg, var(--gris-claro), #f8f9fa);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-item i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .checklist-column h4 {
+            color: var(--verde-oscuro);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .checklist-column ul {
+            list-style: none;
+        }
+
+        .checklist-column li {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid var(--gris-claro);
+            color: var(--gris);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .checklist-column li:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-column li::before {
+            content: '•';
+            color: var(--verde-medio);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .transport-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .gallery-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--gris-claro);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .indicator.active {
+            background: var(--verde-medio);
+        }
+
+        @media (max-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .checklist-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .transport-options {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </body>
 </html>
