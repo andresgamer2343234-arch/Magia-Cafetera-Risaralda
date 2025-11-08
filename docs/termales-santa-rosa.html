@@ -264,24 +264,10 @@
                     <h3 style="margin: 0 0 10px 0; color: #27AE60;">Termales de Santa Rosa</h3>
                     <p style="margin: 0;"><strong>Santa Rosa de Cabal, Risaralda</strong></p>
                     <p style="margin: 5px 0;">Aguas medicinales volcánicas</p>
-                    <p style="margin: 0;"><em>Horario: 8:00 AM - 6:00 PM</em></p>
+                    <p style="margin: 0;"><em>Hoario: 8:00 AM - 6:00 PM</em></p>
                 </div>
             `)
             .openPopup();
-
-        // Galería Deslizante
-        document.addEventListener('DOMContentLoaded', function() {
-            const track = document.querySelector('.gallery-track');
-            const slides = document.querySelectorAll('.gallery-slide');
-            const prevBtn = document.querySelector('.gallery-prev');
-            const nextBtn = document.querySelector('.gallery-next');
-            const indicators = document.querySelectorAll('.indicator');
-            let currentIndex = 0;
-            let autoSlideInterval;
-
-            function updateGallery() {
-                track.style.transform = `translateX(-${currentIndex * 100}%)`;
-                
                 // Actualizar indicadores
                 indicators.forEach((indicator, index) => {
                     indicator.classList.toggle('active', index === currentIndex);
