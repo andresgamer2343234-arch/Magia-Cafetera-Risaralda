@@ -1122,3 +1122,132 @@ footer {
         height: 250px;
     }
 }
+/* ===== MODO OSCURO ===== */
+:root {
+    /* Colores modo claro (actuales) */
+    --bg-primary: #F5F5DC;
+    --bg-secondary: #FFFFFF;
+    --bg-cards: #FFFFFF;
+    --text-primary: #212121;
+    --text-secondary: #757575;
+    --accent-primary: #2E7D32;
+    --accent-secondary: #4CAF50;
+    --border-color: #E8E4D9;
+}
+
+[data-theme="dark"] {
+    /* Colores modo oscuro */
+    --bg-primary: #1A1A1A;
+    --bg-secondary: #2D2D2D;
+    --bg-cards: #3D3D3D;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B0B0B0;
+    --accent-primary: #4CAF50;
+    --accent-secondary: #66BB6A;
+    --border-color: #404040;
+}
+
+/* Aplicar colores a elementos */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.navbar {
+    background: linear-gradient(135deg, var(--accent-primary), #1B5E20);
+}
+
+.hero {
+    background: linear-gradient(135deg, 
+        rgba(46, 125, 50, 0.9) 0%,
+        rgba(76, 175, 80, 0.8) 50%,
+        rgba(200, 230, 201, 0.7) 100%) !important;
+}
+
+.ruta-card, .info-card, .lugar-card, .contacto-form {
+    background: var(--bg-cards);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+/* Toggle del modo oscuro */
+.theme-toggle {
+    position: relative;
+    margin-right: 2rem;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+.toggle-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60px;
+    height: 30px;
+    background: var(--bg-cards);
+    border-radius: 50px;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid var(--border-color);
+}
+
+.toggle-label i {
+    font-size: 14px;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.toggle-label .fa-sun {
+    color: #F39C12;
+}
+
+.toggle-label .fa-moon {
+    color: #F1C40F;
+}
+
+.toggle-ball {
+    position: absolute;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    background: var(--accent-primary);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-ball {
+    transform: translateX(30px);
+}
+
+/* Asegurar que el texto sea legible en modo oscuro */
+.section-title, .ruta-card h3, .info-card h2, .lugar-card h3 {
+    color: var(--text-primary) !important;
+}
+
+.section-subtitle, .ruta-card p, .info-card p, .lugar-card p {
+    color: var(--text-secondary) !important;
+}
+
+/* Ajustes específicos para modo oscuro */
+[data-theme="dark"] .bullet-item {
+    background: #4D4D4D;
+}
+
+[data-theme="dark"] .benefit-item {
+    background: linear-gradient(135deg, #4D4D4D, #5D5D5D);
+}
+
+[data-theme="dark"] .checklist-column li {
+    color: var(--text-secondary);
+    border-bottom-color: #4D4D4D;
+}
+
+[data-theme="dark"] footer {
+    background: linear-gradient(135deg, #2D2D2D, #3D3D3D);
+}
