@@ -1251,3 +1251,41 @@ body {
 [data-theme="dark"] footer {
     background: linear-gradient(135deg, #2D2D2D, #3D3D3D);
 }
+/* Variables para modo oscuro */
+:root {
+    --fondo-claro: #ffffff;
+    --fondo-oscuro: #1a1a1a;
+    --texto-claro: #333333;
+    --texto-oscuro: #ffffff;
+}
+
+/* Fondo general de la página */
+body {
+    background-color: var(--fondo-claro);
+    transition: background-color 0.3s ease;
+}
+
+body[data-theme="dark"] {
+    background-color: var(--fondo-oscuro);
+    color: var(--texto-oscuro);
+}
+
+/* Asegurar que las secciones también cambien */
+.subpage-content {
+    background-color: var(--fondo-claro);
+    transition: background-color 0.3s ease;
+}
+
+body[data-theme="dark"] .subpage-content {
+    background-color: var(--fondo-oscuro);
+}
+
+/* También el footer */
+footer {
+    background-color: #2c3e50;
+    transition: background-color 0.3s ease;
+}
+
+body[data-theme="dark"] footer {
+    background-color: #1a252f;
+}
