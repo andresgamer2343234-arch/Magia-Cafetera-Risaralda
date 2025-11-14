@@ -48,7 +48,19 @@
     --accent-primary: #4CAF50;
     --accent-secondary: #66BB6A;
     --border-color: #404040;
-    
+    /* ===== MODO OSCURO INMEDIATO ===== */
+/* Aplicar fondo oscuro inmediatamente si el tema está guardado */
+body:not([data-theme="dark"]) {
+    background-color: var(--bg-primary);
+    transition: background-color 0.3s ease;
+}
+
+/* Si el sistema operativo prefiere modo oscuro, aplicarlo inmediatamente */
+@media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+        background-color: var(--bg-primary);
+    }
+}
     /* Colores específicos modo oscuro */
     --beige: #1A1A1A;
     --beige-oscuro: #2D2D2D;
